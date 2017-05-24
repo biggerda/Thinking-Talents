@@ -6,6 +6,8 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { TeamMapComponent } from './team-map/team-map.component';
 
+import { teamRoutes } from '../app.routing'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +16,8 @@ import { TeamMapComponent } from './team-map/team-map.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    teamRoutes
   ],
   providers: [],
   bootstrap: [AppComponent]
