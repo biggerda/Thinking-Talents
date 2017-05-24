@@ -19,9 +19,12 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "./assets/scss/app.scss"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/foundation-sites/vendor/jquery/dist/jquery.min.js",
+        "../node_modules/foundation-sites/dist/js/foundation.min.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
@@ -51,7 +54,7 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
+    "styleExt": "scss",
     "component": {}
   }
 }
