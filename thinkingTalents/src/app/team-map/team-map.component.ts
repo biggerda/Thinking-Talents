@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import skills from './skillsData';
 
 @Component({
   selector: 'app-team-map',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamMapComponent implements OnInit {
 
-  constructor() { }
+  skillsList: Array<skill> = skills;
+
+  constructor() {
+    console.log(this.skillsList);
+   }
 
   ngOnInit() {
   }
 
 }
+
+interface skill {
+  name: string;
+  description: string;
+}
+
