@@ -12,13 +12,29 @@
 <div class="row text-center">
 
   <div class="large-4 columns">
-    <input type="text" placeholder="Michael Jordan" />
+    <input type="text" placeholder="Michael Jordan" [(ngModel)]="currentPlayer.name"/>
+
+    <button class="button" (click)="addTeamMember()">Add Team Member</button>
+    <button class="button secondary">Clear Team Member</button>
+
   </div>
 
   <div class="large-8 columns">
-    <div *ngFor="let skill of skillsList; let lastItem = last" class="large-3 columns" [ngClass]="{'end':lastItem}">
-      <label for="checkbox1" title="{{skill.description}}">{{skill.name}}</label><input id="checkbox1" type="checkbox">
+    <div *ngFor="let skill of skillsList; let lastItem = last; let i = index;" class="large-3 columns" [ngClass]="{'end':lastItem}">
+      <label for="checkbox1" title="{{skill.description}}">{{skill.name}}</label><input id="checkbox1" type="checkbox" (change)="updateCurrentTeamMember(skill)" [(ngModel)]="skill.checked">
     </div>
   </div>
 
+</div>
+
+<div class="row" *ngIf="team.players.length > 0">
+  <label><h3>Players</h3>
+      </label>
+</div>
+
+
+<div class="row" *ngFor="let player of team.players; let i = index;">
+  <div class="large-12 columns">
+    <label title="{{player.name}}">{{player.name}}</label>
+  </div>
 </div>
