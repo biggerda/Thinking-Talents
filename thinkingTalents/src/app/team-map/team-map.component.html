@@ -12,16 +12,19 @@
 <div class="row text-center">
 
   <div class="large-4 columns">
-    <input type="text" placeholder="Michael Jordan" [(ngModel)]="currentPlayer.name"/>
+    <input type="text" placeholder="Michael Jordan" [(ngModel)]="currentPlayer.name" />
 
-    <button class="button" (click)="addTeamMember()">Add Team Member</button>
-    <button class="button secondary">Clear Team Member</button>
-
+    <button class="button success" (click)="addTeamMember()" [disabled]="mode == 'edit' ">Add Team Member</button>
+    <button class="button" (click)="updateMember()" [disabled]="mode == 'create' ">Update Team Member</button>
+    <button class="button secondary" (click)="reset()" [disabled]="mode == 'create' ">Clear</button>
+    <button class="button alert" (click)="removeMember(currentPlayer)" [disabled]="mode !== 'edit' ">Remove Team Member</button>
   </div>
+
 
   <div class="large-8 columns">
     <div *ngFor="let skill of skillsList; let lastItem = last; let i = index;" class="large-3 columns" [ngClass]="{'end':lastItem}">
-      <label for="checkbox1" title="{{skill.description}}">{{skill.name}}</label><input id="checkbox1" type="checkbox" (change)="updateCurrentTeamMember(skill)" [(ngModel)]="skill.checked">
+      <label for="checkbox1" title="{{skill.description}}">{{skill.name}}</label><input id="checkbox1" type="checkbox" (change)="updateSkills(skill)"
+        [(ngModel)]="skill.checked">
     </div>
   </div>
 
@@ -35,6 +38,257 @@
 
 <div class="row" *ngFor="let player of team.players; let i = index;">
   <div class="large-12 columns">
-    <label title="{{player.name}}">{{player.name}}</label>
+    <img src="../../assets/img/torsoIcon.png"><a href="#" title="{{player.name}}" (click)="editPlayer(player)">{{player.name}}</a>
   </div>
 </div>
+
+<div *ngIf="mode !== 'displayTeamMap' ">
+
+
+  <div class="row">
+    <div class="columns small-5 callout">
+      <h2>Analytical</h2>
+    </div>
+
+    <div class="columns small-2 callout">
+      <h4 class="text-center">Intellectual Capital Team Map</h4>
+    </div>
+
+    <div class="columns small-5 callout">
+      <h2>Innovative</h2>
+    </div>
+  </div>
+
+  <div class="row text-center">
+
+    <!--Analytical Traits-->
+    <div class="columns small-5">
+
+      <div class="row">
+        <div class="columns small-4">
+          <label>Organizing
+                  <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
+                </label>
+        </div>
+
+        <div class="columns small-4 end">
+          <label>Achieving
+                  <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
+                </label>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="columns small-4 small-offset-8">
+          <label>Fixing It
+                  <img width="120" src="../../assets/img/puzzle-icon-red.png"/>
+                </label>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="columns small-4">
+          <label>Collecting
+                  <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
+                </label>
+        </div>
+        <div class="columns small-4 end">
+          <label>Thinking Logically
+                  <img width="120" src="../../assets/img/puzzle-icon-red.png"/>
+                </label>
+        </div>
+      </div>
+
+    </div>
+
+    <!--Central Traits-->
+    <div class="columns small-2">
+      <div class="columns small-12">
+        <label>Goal Setting
+                <img width="120" src="../../assets/img/puzzle-icon-black.png"/>
+              </label>
+      </div>
+
+      <div class="columns small-12 ">
+        <label>Competing
+                <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
+              </label>
+      </div>
+    </div>
+
+    <!--Innovative Traits-->
+    <div class="columns small-5">
+
+      <div class="row">
+        <div class="columns small-4">
+          <label>Thinking Forward
+                  <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
+                </label>
+        </div>
+
+        <div class="columns small-4">
+          <label>Competing
+                  <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
+                </label>
+        </div>
+
+        <div class="columns small-4">
+          <label>Loving Ideas
+                  <img width="120" src="../../assets/img/puzzle-icon-green.png"/>
+                </label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="columns small-4 small-offset-2">
+          <label>Adapting
+                  <img width="120" src="../../assets/img/puzzle-icon-green.png"/>
+                </label>
+        </div>
+
+        <div class="columns small-4 end">
+          <label>Innovating
+                  <img width="120" src="../../assets/img/puzzle-icon-green.png"/>
+                </label>
+
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+  <hr>
+
+  <div class="row text-center">
+
+    <!--Analytical Trait Row 2-->
+    <div class="columns small-5">
+
+      <div class="row">
+        <div class="columns small-4">
+          <label>Focusing
+                  <img width="120" src="../../assets/img/puzzle-icon-red.png"/>
+                </label>
+        </div>
+
+        <div class="columns small-4 end">
+          <label>Equalizing
+                  <img width="120" src="../../assets/img/puzzle-icon-red.png"/>
+                </label>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="columns small-4 small-offset-8">
+          <label>Reliablity
+                  <img width="120" src="../../assets/img/puzzle-icon-red.png"/>
+                </label>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="columns small-4">
+          <label>Taking Charge
+                  <img width="120" src="../../assets/img/puzzle-icon-blue.png"/>
+                </label>
+        </div>
+        <div class="columns small-4 end">
+          <label>Making It Happen
+                  <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
+                </label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="columns small-4 small-offset-8">
+          <label>Thinking Back
+                  <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
+                </label>
+        </div>
+
+      </div>
+
+       <div class="row">
+        <div class="columns small-4">
+          <label>Perfecting
+                  <img width="120" src="../../assets/img/puzzle-icon-blue.png"/>
+                </label>
+        </div>
+        <div class="columns small-4 end">
+          <label>Having Confidence
+                  <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
+                </label>
+        </div>
+      </div>
+
+    </div>
+
+    <!--Central Traits Row 2-->
+    <div class="columns small-2">
+      <div class="columns small-12">
+        <label>Thinking Alone
+                <img width="120" src="../../assets/img/puzzle-icon-black.png"/>
+              </label>
+      </div>
+
+      <div class="columns small-12 ">
+        <label>Joking
+                <img width="120" src="../../assets/img/puzzle-icon-black.png"/>
+              </label>
+      </div>
+    </div>
+
+    <!--Innovative Traits Row 2-->
+    <div class="columns small-5">
+
+      <div class="row">
+        <div class="columns small-3">
+          <label>Mentoring
+                  <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
+                </label>
+        </div>
+
+        <div class="columns small-3">
+          <label>Optimisim
+                  <img width="120" src="../../assets/img/puzzle-icon-green.png"/>
+                </label>
+        </div>
+
+        <div class="columns small-3 end">
+          <label>Peace-making
+                  <img width="120" src="../../assets/img/puzzle-icon-green.png"/>
+                </label>
+        </div>
+      </div>
+
+     <div class="row">
+        <div class="columns small-3">
+          <label>Including
+                  <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
+                </label>
+        </div>
+
+        <div class="columns small-3">
+          <label>Enrolling
+                  <img width="120" src="../../assets/img/puzzle-icon-green.png"/>
+                </label>
+        </div>
+
+        <div class="columns small-3 end">
+          <label>Creating Intimacy</label>
+                  <img width="120" src="../../assets/img/puzzle-icon-green.png"/>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
