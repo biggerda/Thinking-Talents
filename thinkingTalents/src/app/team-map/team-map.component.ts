@@ -45,6 +45,8 @@ export class TeamMapComponent implements OnInit {
 
   updateSkills(skill: skill) {
 
+    debugger;
+
     let index: number = this.currentPlayer.talents.indexOf(skill);
 
     if (index !== -1) {
@@ -76,6 +78,9 @@ export class TeamMapComponent implements OnInit {
   }
 
   editPlayer(player: player) {
+
+    this.reset();
+
     this.currentPlayer = player;
     this.mode = "edit";
     let i;
@@ -94,30 +99,63 @@ export class TeamMapComponent implements OnInit {
       skill.checked = false;
     })
 
-    this.currentPlayer = {};
+    this.currentPlayer = {
+      talents: []
+    }
 
     this.mode = "create";
   }
 
   buildTeamMap() {
 
-   let index;
+    let index;
 
     this.team.players.forEach((player) => {
 
-      player.talents.forEach((talent) => {
+      if (player.talents && player.talents.length > 0) {
+
+        player.talents.forEach((talent) => {
 
           index = this.mapSkills.indexOf(talent);
           this.mapSkills[index].checked = true;
 
-          if(!this.mapSkills[index].names) this.mapSkills[index].names = [];
-          
+
+          if (!this.mapSkills[index].names) this.mapSkills[index].names = [];
+
           this.mapSkills[index].names.push(player.name);
 
-      });
+        });
+
+      }
 
     });
 
+    this.mode = "displayTeamMap"
+
+  }
+
+  isChecked(skillName: string){
+
+   var index = this.mapSkills.map(function(e) { return e.name; }).indexOf(skillName);
+
+   if(index >= 0) return this.mapSkills[index].checked;
+
+   console.log(skillName + " not found in skills array");
+
+   return false;
+   
+  }
+
+  getNames(skillName: string){
+
+    var index = this.mapSkills.map(function(e) { return e.name; }).indexOf(skillName);
+
+    return this.mapSkills[index].names;
+
+  }
+
+  editTeamMap(){
+    this.mode = "create";
   }
 
 }
@@ -129,7 +167,7 @@ interface skill {
 
 interface mapSkill {
   name: string;
-  description: string;
+  description?: string;
   checked?: boolean;
   names?: Array<string>;
 }

@@ -183,8 +183,8 @@ let skills = [
         "type": "procedural"
     },
     {
-        "name": "Thinking",
-        "description": "Alone Poses questions to self and tries to figure them out; constant mental hum.",
+        "name": "Thinking Alone",
+        "description": "Poses questions to self and tries to figure them out; constant mental hum.",
         "checked": false
     },
     {

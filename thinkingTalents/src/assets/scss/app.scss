@@ -102,3 +102,24 @@
 .margin-bottom-1 {
     margin-bottom: 1%;
 }
+
+.margin-bottom-0 {
+    margin-bottom: 0;
+}
+
+.puzzle { 
+   position: relative; 
+}
+
+div.name { 
+   column-count: 3;
+   position: absolute; 
+   top: 25px; 
+   left: 0; 
+   width: 100%; 
+}
+
+div.name p {
+   width: 166px;
+   text-transform: uppercase;
+}
