@@ -18,6 +18,7 @@
     <button class="button" (click)="updateMember()" [disabled]="mode == 'create' ">Update Team Member</button>
     <button class="button secondary" (click)="reset()" [disabled]="mode == 'create' ">Clear</button>
     <button class="button alert" (click)="removeMember(currentPlayer)" [disabled]="mode !== 'edit' ">Remove Team Member</button>
+    <button class="button info" (click)="buildTeamMap()" [disabled]="!team.players.length > 0 ">Generate Team Map</button>
   </div>
 
 
@@ -44,19 +45,24 @@
 
 <div *ngIf="mode !== 'displayTeamMap' ">
 
-
-  <div class="row">
-    <div class="columns small-5 callout">
-      <h2>Analytical</h2>
+  <div class="row margin-bottom-1">
+    <div class="columns small-5 bg-red">
+        <div class="columns small-12 text-center">
+          <h1 style="margin-bottom: 0px" class="text-archivo">ANALYTIC</h1>
+          <p>Concerned with data, facts, numbers, being "logical" and rational</p>
+        </div>
     </div>
 
-    <div class="columns small-2 callout">
-      <h4 class="text-center">Intellectual Capital Team Map</h4>
+    <div class="columns small-2">
+      <h4 class="text-center text-stencil">INTELLECTUAL CAPITAL TEAM MAP</h4>
     </div>
 
-    <div class="columns small-5 callout">
-      <h2>Innovative</h2>
-    </div>
+    <div class="columns small-5 bg-green">
+        <div class="columns small-12 text-center">
+          <h1 style="margin-bottom: 0px" class="text-archivo">INNOVATIVE</h1>
+          <p>Concerned with the future, newness, possibilities, strategy, "big picture"</p>
+        </div>
+      </div>
   </div>
 
   <div class="row text-center">
@@ -71,32 +77,30 @@
                 </label>
         </div>
 
-        <div class="columns small-4 end">
+        <div class="columns small-4">
           <label>Achieving
                   <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
                 </label>
         </div>
 
-      </div>
-
-      <div class="row">
-        <div class="columns small-4 small-offset-8">
+        <div class="columns small-4">
           <label>Fixing It
-                  <img width="120" src="../../assets/img/puzzle-icon-red.png"/>
+                  <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
                 </label>
         </div>
 
       </div>
 
-      <div class="row">
-        <div class="columns small-4">
+      <div class="row padded-row">
+        <div class="columns small-4 small-offset-2">
           <label>Collecting
                   <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
                 </label>
         </div>
+
         <div class="columns small-4 end">
           <label>Thinking Logically
-                  <img width="120" src="../../assets/img/puzzle-icon-red.png"/>
+                  <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
                 </label>
         </div>
       </div>
@@ -104,14 +108,14 @@
     </div>
 
     <!--Central Traits-->
-    <div class="columns small-2">
+    <div class="columns small-2 margin-top-5">
       <div class="columns small-12">
         <label>Goal Setting
-                <img width="120" src="../../assets/img/puzzle-icon-black.png"/>
+                <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
               </label>
       </div>
 
-      <div class="columns small-12 ">
+      <div class="columns small-12 margin-top-15">
         <label>Competing
                 <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
               </label>
@@ -136,7 +140,7 @@
 
         <div class="columns small-4">
           <label>Loving Ideas
-                  <img width="120" src="../../assets/img/puzzle-icon-green.png"/>
+                  <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
                 </label>
         </div>
       </div>
@@ -144,21 +148,30 @@
       <div class="row">
         <div class="columns small-4 small-offset-2">
           <label>Adapting
-                  <img width="120" src="../../assets/img/puzzle-icon-green.png"/>
+                  <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
                 </label>
         </div>
 
         <div class="columns small-4 end">
           <label>Innovating
-                  <img width="120" src="../../assets/img/puzzle-icon-green.png"/>
+                  <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
                 </label>
-
-
         </div>
-
       </div>
 
+      <div class="row">
+        <div class="columns small-4">
+          <label>Strategizing
+                  <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
+                </label>
+        </div>
 
+        <div class="columns small-4">
+          <label>Love Of Learning
+                  <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
+                </label>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -171,33 +184,31 @@
     <div class="columns small-5">
 
       <div class="row">
+
         <div class="columns small-4">
           <label>Focusing
-                  <img width="120" src="../../assets/img/puzzle-icon-red.png"/>
+                  <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
                 </label>
         </div>
 
-        <div class="columns small-4 end">
-          <label>Equalizing
-                  <img width="120" src="../../assets/img/puzzle-icon-red.png"/>
-                </label>
-        </div>
-
-      </div>
-
-      <div class="row">
-        <div class="columns small-4 small-offset-8">
-          <label>Reliablity
-                  <img width="120" src="../../assets/img/puzzle-icon-red.png"/>
-                </label>
-        </div>
-
-      </div>
-
-      <div class="row">
         <div class="columns small-4">
+          <label>Equalizing
+                  <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
+                </label>
+        </div>
+
+        <div class="columns small-4">
+          <label>Reliablity
+                  <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
+                </label>
+        </div>
+
+      </div>
+
+      <div class="row padded-row">
+        <div class="columns small-4 small-offset-2">
           <label>Taking Charge
-                  <img width="120" src="../../assets/img/puzzle-icon-blue.png"/>
+                  <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
                 </label>
         </div>
         <div class="columns small-4 end">
@@ -208,7 +219,23 @@
       </div>
 
       <div class="row">
-        <div class="columns small-4 small-offset-8">
+        
+
+      </div>
+
+      <div class="row padded-row">
+        <div class="columns small-4">
+          <label>Perfecting
+                  <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
+                </label>
+        </div>
+        <div class="columns small-4">
+          <label>Having Confidence
+                  <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
+                </label>
+        </div>
+
+        <div class="columns small-4">
           <label>Thinking Back
                   <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
                 </label>
@@ -216,32 +243,19 @@
 
       </div>
 
-       <div class="row">
-        <div class="columns small-4">
-          <label>Perfecting
-                  <img width="120" src="../../assets/img/puzzle-icon-blue.png"/>
-                </label>
-        </div>
-        <div class="columns small-4 end">
-          <label>Having Confidence
-                  <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
-                </label>
-        </div>
-      </div>
-
     </div>
 
     <!--Central Traits Row 2-->
-    <div class="columns small-2">
+    <div class="columns small-2 margin-top-5">
       <div class="columns small-12">
         <label>Thinking Alone
-                <img width="120" src="../../assets/img/puzzle-icon-black.png"/>
+                <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
               </label>
       </div>
 
-      <div class="columns small-12 ">
+      <div class="columns small-12 margin-top-15">
         <label>Joking
-                <img width="120" src="../../assets/img/puzzle-icon-black.png"/>
+                <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
               </label>
       </div>
     </div>
@@ -250,45 +264,100 @@
     <div class="columns small-5">
 
       <div class="row">
-        <div class="columns small-3">
+        <div class="columns small-4">
+          <label>Optimisim
+                  <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
+                </label>
+        </div>
+
+        <div class="columns small-4">
           <label>Mentoring
                   <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
                 </label>
         </div>
 
-        <div class="columns small-3">
-          <label>Optimisim
-                  <img width="120" src="../../assets/img/puzzle-icon-green.png"/>
-                </label>
-        </div>
-
-        <div class="columns small-3 end">
+        <div class="columns small-4">
           <label>Peace-making
-                  <img width="120" src="../../assets/img/puzzle-icon-green.png"/>
+                  <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
                 </label>
         </div>
       </div>
 
-     <div class="row">
-        <div class="columns small-3">
+      <div class="row padded-row">
+        <div class="columns small-4">
+          <label>Individuality
+                  <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
+                </label>
+        </div>
+
+        <div class="columns small-4">
           <label>Including
                   <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
                 </label>
         </div>
 
-        <div class="columns small-3">
+        <div class="columns small-4 end">
           <label>Enrolling
-                  <img width="120" src="../../assets/img/puzzle-icon-green.png"/>
+                  <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
                 </label>
         </div>
 
-        <div class="columns small-3 end">
+      </div>
+
+      <div class="row padded-row">
+        <div class="columns small-4">
           <label>Creating Intimacy</label>
-                  <img width="120" src="../../assets/img/puzzle-icon-green.png"/>
+          <img width="120" src="../../assets/img/puzzle-icon-empty.png" />
+        </div>
+
+        <div class="columns small-4 end">
+          <label>Storytelling
+                  <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
+                </label>
+        </div>
+
+        <div class="columns small-4">
+          <label>Connecting
+                  <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
+                </label>
+        </div>
+
+      </div>
+
+      <div class="row padded-row">
+
+        <div class="columns small-4 small-offset-2">
+          <label>Believing
+                  <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
+                </label>
+        </div>
+
+        <div class="columns small-4 end">
+          <label>Feeling For Others</label>
+          <img width="120" src="../../assets/img/puzzle-icon-empty.png" />
         </div>
       </div>
 
 
     </div>
+
+  </div>
+
+    <div class="row text-center margin-top-1">
+      <div class="columns small-5 bg-blue">
+        <h2 style="margin-bottom: 0px;" class="text-archivo">Procedural</h2>
+        <p>Concerned with data, facts, numbers, being "logical" and rational</p>
+      </div>
+
+      <div class="columns small-2">
+        <h4 class="text-center">[LOGO HERE]</h4>
+      </div>
+
+      <div class="columns small-5 bg-yellow">
+        <h2 style="margin-bottom: 0px;" class="text-archivo">Relational</h2>
+        <p>Concerned with data, facts, numbers, being "logical" and rational</p>
+      </div>
+    </div>
+
 
   </div>

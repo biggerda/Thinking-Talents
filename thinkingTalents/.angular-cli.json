@@ -9,7 +9,8 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico"
+        "favicon.ico",
+        "./assets/fonts/swiss-721-black-bt-59337c07f0848.ttf"
       ],
       "index": "index.html",
       "main": "main.ts",

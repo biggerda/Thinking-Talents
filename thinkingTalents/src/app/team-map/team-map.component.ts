@@ -9,6 +9,8 @@ import skills from './skillsData';
 export class TeamMapComponent implements OnInit {
 
   skillsList: Array<skill> = skills;
+  mapSkills: Array<mapSkill> = skills;
+
   team: team;
   currentPlayer: player;
   mode: string;
@@ -97,12 +99,39 @@ export class TeamMapComponent implements OnInit {
     this.mode = "create";
   }
 
-}
+  buildTeamMap() {
 
+   let index;
+
+    this.team.players.forEach((player) => {
+
+      player.talents.forEach((talent) => {
+
+          index = this.mapSkills.indexOf(talent);
+          this.mapSkills[index].checked = true;
+
+          if(!this.mapSkills[index].names) this.mapSkills[index].names = [];
+          
+          this.mapSkills[index].names.push(player.name);
+
+      });
+
+    });
+
+  }
+
+}
 interface skill {
   name: string;
   description: string;
   checked?: boolean;
+}
+
+interface mapSkill {
+  name: string;
+  description: string;
+  checked?: boolean;
+  names?: Array<string>;
 }
 
 interface player {

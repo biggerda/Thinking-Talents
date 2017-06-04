@@ -50,3 +50,55 @@
 
 @include motion-ui-transitions;
 @include motion-ui-animations;
+
+@font-face {
+  font-family: 'Swiss Black';
+  src: url('../fonts/swiss-721-black-bt-59337c07f0848.ttf');
+}
+
+.text-archivo { font-family: 'Archivo Black'}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.text-stencil {
+    font-family: 'Stardos Stencil';
+    font-weight: bold;
+}
+
+.bg-red {
+    background-color: #CB7764;   
+}
+
+.bg-green {
+    background-color: #98C883;
+}
+
+.bg-blue {
+    background-color: #96BDD8;
+}
+
+.bg-yellow {
+    background-color: #FDEF90;
+}
+
+.padded-row {
+    margin-top: 10%;
+}
+
+.margin-top-5 {
+    margin-top: 5%;
+}
+
+.margin-top-15 {
+    margin-top: 15%;
+}
+
+.margin-top-1 {
+    margin-top: 1%;
+}
+
+.margin-bottom-1 {
+    margin-bottom: 1%;
+}
