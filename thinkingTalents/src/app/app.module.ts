@@ -5,13 +5,15 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { TeamMapComponent } from './team-map/team-map.component';
+import { NgInit } from './team-map/nginit.directive';
 
 import { teamRoutes } from '../app.routing'
 
 @NgModule({
   declarations: [
     AppComponent,
-    TeamMapComponent
+    TeamMapComponent,
+    NgInit
   ],
   imports: [
     BrowserModule,
