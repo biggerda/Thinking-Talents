@@ -183,41 +183,22 @@ export class TeamMapComponent implements OnInit {
 
   print() {
 
-
-    // var specialElementHandlers = {
-    //   '#bypassme': function (element, renderer) {
-    //     return true;
-    //   }
-    // };
-
-    var source = jquery("#teamMap").html();
-    debugger;
     html2canvas(jquery("#teamMap"), {
       proxy: "http://localhost:4200",
       logging: true,
-      onrendered: function (canvas) {
-        var img = canvas.toDataURL();
-        window.open(img);
-        //debugger;
-        // debugger;
-        // this.doc = new jsPDF('landscape');
-        // //this.doc.text(50,50, "hello!!!!!!");
-        // debugger;
-        // this.doc.addImage(img,'png', 50, 50, canvas.width, canvas.height);
-        // this.doc.output("dataurlnewwindow")   
+    }).then((canvas) => {
 
-      }
+      var img = canvas.toDataURL('image/png');
+        //window.open(img);
+
+         this.doc = new jsPDF('landscape', 'pt','legal');
+        // //this.doc.text(10, 10, "hello!");
+        this.doc.addImage(img, 'PNG', 50, 0, 900, 612);
+
+        this.doc.save('sample.pdf');
+        //this.doc.output("dataurlnewwindow");
+
     });
-
-    // 
-    //var source = jquery("#test").html();
-    // this.doc.fromHTML(source, 15, 15,
-    //   {
-    //     'width': 180
-    //   });
-
-    //   this.doc.output("dataurlnewwindow")
-
   }
 
 }
