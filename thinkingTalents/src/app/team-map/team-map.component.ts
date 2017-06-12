@@ -183,7 +183,7 @@ export class TeamMapComponent implements OnInit {
 
   print() {
 
-    html2canvas(jquery("#teamMap"), {
+    html2canvas(jquery("#teamMap")[0], {
       proxy: "http://localhost:4200",
       logging: true,
     }).then((canvas) => {
@@ -191,9 +191,9 @@ export class TeamMapComponent implements OnInit {
       var img = canvas.toDataURL('image/png');
         //window.open(img);
 
-         this.doc = new jsPDF('landscape', 'pt','legal');
+        this.doc = new jsPDF('landscape', 'pt','legal');
         // //this.doc.text(10, 10, "hello!");
-        this.doc.addImage(img, 'PNG', 50, 0, 900, 612);
+        this.doc.addImage(img, 'PNG', 0, 0, 1008, 612);
 
         this.doc.save('sample.pdf');
         //this.doc.output("dataurlnewwindow");

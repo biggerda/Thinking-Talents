@@ -98,6 +98,10 @@
     margin-top: 1%;
 }
 
+.padding-top-half {
+    padding-top: 0.5%;
+}
+
 .margin-bottom-1 {
     margin-bottom: 1%;
 }
@@ -126,11 +130,27 @@ div.name p {
 #teamMap{
     background: url('../img/noWayOutWatermark.png');
     background-repeat: no-repeat;
-    background-size: 50% 40%;
+    background-size: 70%;
     background-position: center;
 }
 
 html {
     height: 100%
 }
+
+#logo{
+    position: relative;
+    top: -150px
+}
+
+.wrapper {
+    margin: auto;
+    height: 1264.67px;
+    width: 2083.1329px;
+}
+
+.full-width-row {
+    max-width: none;
+}
+
 
