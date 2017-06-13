@@ -92,8 +92,8 @@
         <h5>Organizing</h5>
         <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
 
-        <div class="name" *ngIf="isChecked('Organizing')">
-          <h3 *ngFor="let name of getNames('Organizing')" class="text-archivo margin-bottom-0">{{name}}</h3>
+        <div class="name" *ngIf="isChecked('Organizing')" [ngClass]="{'column-count-2': getNames('Organizing').length > 4}">
+          <h4 *ngFor="let name of getNames('Organizing')" class="text-archivo margin-bottom-0">{{name}}</h4>
         </div>
       </div>
 
@@ -101,8 +101,8 @@
         <h5>Achieving</h5>
         <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
 
-        <div class="name" *ngIf="isChecked('Achieving')">
-          <h3 *ngFor="let name of getNames('Achieving')" class="text-archivo margin-bottom-0">{{name}}</h3>
+        <div class="name" *ngIf="isChecked('Achieving')" [ngClass]="{'column-count-2': getNames('Achieving').length > 4}" >
+          <h4 *ngFor="let name of getNames('Achieving')" class="text-archivo margin-bottom-0">{{name}}</h4>
         </div>
       </div>
 
@@ -110,8 +110,8 @@
         <h5>Fixing It</h5>
         <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
 
-        <div class="name" *ngIf="isChecked('Fixing It')">
-          <h3 *ngFor="let name of getNames('Fixing It')" class="text-archivo margin-bottom-0">{{name}}</h3>
+        <div class="name" *ngIf="isChecked('Fixing It')" [ngClass]="{'column-count-2': getNames('Fixing It').length > 4}">
+          <h4 *ngFor="let name of getNames('Fixing It')" class="text-archivo margin-bottom-0">{{name}}</h4>
         </div>
 
       </div>
@@ -123,8 +123,8 @@
         <h5>Collecting</h5>
         <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
                 
-        <div class="name" *ngIf="isChecked('Collecting')">
-          <h3 *ngFor="let name of getNames('Collecting')" class="text-archivo margin-bottom-0">{{name}}</h3>
+        <div class="name" *ngIf="isChecked('Collecting')" [ngClass]="{'column-count-2': getNames('Collecting').length > 4}">
+          <h4 *ngFor="let name of getNames('Collecting')" class="text-archivo margin-bottom-0">{{name}}</h4>
         </div>
 
       </div>
@@ -133,8 +133,8 @@
         <h5>Thinking Logically</h5>
         <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
 
-        <div class="name" *ngIf="isChecked('Thinking Logically')">
-          <h3 *ngFor="let name of getNames('Thinking Logically')" class="text-archivo margin-bottom-0">{{name}}</h3>
+        <div class="name" *ngIf="isChecked('Thinking Logically')" [ngClass]="{'column-count-2': getNames('Thinking Logically').length > 4}">
+          <h4 *ngFor="let name of getNames('Thinking Logically')" class="text-archivo margin-bottom-0">{{name}}</h4>
         </div>
 
       </div>
@@ -148,8 +148,8 @@
       <h5>Goal Setting</h5>
       <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
 
-      <div class="name" *ngIf="isChecked('Goal Setting')">
-        <h3 *ngFor="let name of getNames('Goal Setting')" class="text-archivo margin-bottom-0">{{name}}</h3>
+      <div class="name" *ngIf="isChecked('Goal Setting')" [ngClass]="{'column-count-2': getNames('Goal Setting').length > 4}">
+        <h4 *ngFor="let name of getNames('Goal Setting')" class="text-archivo margin-bottom-0">{{name}}</h4>
       </div>
 
     </div>
@@ -158,8 +158,8 @@
       <h5>Competing</h5>
       <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
 
-      <div class="name" *ngIf="isChecked('Competing')">
-        <h3 *ngFor="let name of getNames('Competing')" class="text-archivo margin-bottom-0">{{name}}</h3>
+      <div class="name" *ngIf="isChecked('Competing')" [ngClass]="{'column-count-2': getNames('Competing').length > 4}">
+        <h4 *ngFor="let name of getNames('Competing')" class="text-archivo margin-bottom-0">{{name}}</h4>
       </div>
 
     </div>
@@ -173,8 +173,8 @@
         <h5>Thinking Forward</h5>
         <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
 
-        <div class="name" *ngIf="isChecked('Thinking Forward')">
-          <h3 *ngFor="let name of getNames('Thinking Forward')" class="text-archivo margin-bottom-0">{{name}}</h3>
+        <div class="name" *ngIf="isChecked('Thinking Forward')" [ngClass]="{'column-count-2': getNames('Thinking Forward').length > 4}">
+          <h4 *ngFor="let name of getNames('Thinking Forward')" class="text-archivo margin-bottom-0">{{name}}</h4>
         </div>
       </div>
 
@@ -182,8 +182,8 @@
         <h5>Standing Out</h5>
         <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
 
-        <div class="name" *ngIf="isChecked('Standing Out')">
-          <h3 *ngFor="let name of getNames('Standing Out')" class="text-archivo margin-bottom-0">{{name}}</h3>
+        <div class="name" *ngIf="isChecked('Standing Out')" [ngClass]="{'column-count-2': getNames('Standing Out').length > 4}">
+          <h4 *ngFor="let name of getNames('Standing Out')" class="text-archivo margin-bottom-0">{{name}}</h4>
         </div>
 
       </div>
@@ -192,8 +192,8 @@
         <h5>Loving Ideas</h5>
         <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
 
-        <div class="name" *ngIf="isChecked('Loving Ideas')">
-          <h3 *ngFor="let name of getNames('Loving Ideas')" class="text-archivo margin-bottom-0">{{name}}</h3>
+        <div class="name" *ngIf="isChecked('Loving Ideas')" [ngClass]="{'column-count-2': getNames('Loving Ideas').length > 4}">
+          <h4 *ngFor="let name of getNames('Loving Ideas')" class="text-archivo margin-bottom-0">{{name}}</h4>
         </div>
 
       </div>
@@ -204,8 +204,8 @@
         <h5>Adapting</h5>
         <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
 
-        <div class="name" *ngIf="isChecked('Adapting')">
-          <h3 *ngFor="let name of getNames('Adapting')" class="text-archivo margin-bottom-0">{{name}}</h3>
+        <div class="name" *ngIf="isChecked('Adapting')" [ngClass]="{'column-count-2': getNames('Adapting').length > 4}">
+          <h4 *ngFor="let name of getNames('Adapting')" class="text-archivo margin-bottom-0">{{name}}</h4>
         </div>
       </div>
 
@@ -213,8 +213,8 @@
         <h5>Innovating</h5>
         <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
 
-        <div class="name" *ngIf="isChecked('Innovating')">
-          <h3 *ngFor="let name of getNames('Innovating')" class="text-archivo margin-bottom-0">{{name}}</h3>
+        <div class="name" *ngIf="isChecked('Innovating')" [ngClass]="{'column-count-2': getNames('Innovating').length > 4}">
+          <h4 *ngFor="let name of getNames('Innovating')" class="text-archivo margin-bottom-0">{{name}}</h4>
         </div>
       </div>
     </div>
@@ -224,8 +224,8 @@
         <h5>Strategizing</h5>
         <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
 
-        <div class="name" *ngIf="isChecked('Strategizing')">
-          <h3 *ngFor="let name of getNames('Strategizing')" class="text-archivo margin-bottom-0">{{name}}</h3>
+        <div class="name" *ngIf="isChecked('Strategizing')" [ngClass]="{'column-count-2': getNames('Strategizing').length > 4}">
+          <h4 *ngFor="let name of getNames('Strategizing')" class="text-archivo margin-bottom-0">{{name}}</h4>
         </div>
       </div>
 
@@ -233,8 +233,8 @@
         <h5>Love of Learning</h5>
         <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
 
-        <div class="name" *ngIf="isChecked('Love of Learning')">
-          <h3 *ngFor="let name of getNames('Love of Learning')" class="text-archivo margin-bottom-0">{{name}}</h3>
+        <div class="name" *ngIf="isChecked('Love of Learning')" [ngClass]="{'column-count-2': getNames('Love of Learning').length > 4}">
+          <h4 *ngFor="let name of getNames('Love of Learning')" class="text-archivo margin-bottom-0">{{name}}</h4>
         </div>
       </div>
     </div>
@@ -255,8 +255,8 @@
         <h5>Focusing</h5>
         <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
 
-        <div class="name" *ngIf="isChecked('Focusing')">
-          <h3 *ngFor="let name of getNames('Focusing')" class="text-archivo margin-bottom-0">{{name}}</h3>
+        <div class="name" *ngIf="isChecked('Focusing')" [ngClass]="{'column-count-2': getNames('Focusing').length > 4}">
+          <h4 *ngFor="let name of getNames('Focusing')" class="text-archivo margin-bottom-0">{{name}}</h4>
         </div>
 
       </div>
@@ -265,8 +265,8 @@
         <h5>Equalizing</h5>
         <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
 
-        <div class="name" *ngIf="isChecked('Equalizing')">
-          <h3 *ngFor="let name of getNames('Equalizing')" class="text-archivo margin-bottom-0">{{name}}</h3>
+        <div class="name" *ngIf="isChecked('Equalizing')" [ngClass]="{'column-count-2': getNames('Equalizing').length > 4}">
+          <h4 *ngFor="let name of getNames('Equalizing')" class="text-archivo margin-bottom-0">{{name}}</h4>
         </div>
 
       </div>
@@ -275,8 +275,8 @@
         <h5>Reliability </h5>
         <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
 
-        <div class="name" *ngIf="isChecked('Reliability')">
-          <h3 *ngFor="let name of getNames('Reliability')" class="text-archivo margin-bottom-0">{{name}}</h3>
+        <div class="name" *ngIf="isChecked('Reliability')" [ngClass]="{'column-count-2': getNames('Reliability').length > 4}">
+          <h4 *ngFor="let name of getNames('Reliability')" class="text-archivo margin-bottom-0">{{name}}</h4>
         </div>
 
       </div>
@@ -288,8 +288,8 @@
         <h5>Taking Charge</h5>
         <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
 
-        <div class="name" *ngIf="isChecked('Taking Charge')">
-          <h3 *ngFor="let name of getNames('Taking Charge')" class="text-archivo margin-bottom-0">{{name}}</h3>
+        <div class="name" *ngIf="isChecked('Taking Charge')" [ngClass]="{'column-count-2': getNames('Taking Charge').length > 4}">
+          <h4 *ngFor="let name of getNames('Taking Charge')" class="text-archivo margin-bottom-0">{{name}}</h4>
         </div>
 
 
@@ -298,8 +298,8 @@
         <h5>Making It Happen</h5>
         <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
                 
-        <div class="name" *ngIf="isChecked('Making It Happen')">
-          <h3 *ngFor="let name of getNames('Making It Happen')" class="text-archivo margin-bottom-0">{{name}}</h3>
+        <div class="name" *ngIf="isChecked('Making It Happen')" [ngClass]="{'column-count-2': getNames('Making It Happen').length > 4}">
+          <h4 *ngFor="let name of getNames('Making It Happen')" class="text-archivo margin-bottom-0">{{name}}</h4>
         </div>
 
       </div>
@@ -315,8 +315,8 @@
         <h5>Perfecting</h5>
         <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
 
-        <div class="name" *ngIf="isChecked('Perfecting')">
-          <h3 *ngFor="let name of getNames('Perfecting')" class="text-archivo margin-bottom-0">{{name}}</h3>
+        <div class="name" *ngIf="isChecked('Perfecting')" [ngClass]="{'column-count-2': getNames('Perfecting').length > 4}">
+          <h4 *ngFor="let name of getNames('Perfecting')" class="text-archivo margin-bottom-0">{{name}}</h4>
         </div>
       </div>
 
@@ -324,8 +324,8 @@
         <h5>Having Confidence</h5>
         <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
 
-        <div class="name" *ngIf="isChecked('Having Confidence')">
-          <h3 *ngFor="let name of getNames('Having Confidence')" class="text-archivo margin-bottom-0">{{name}}</h3>
+        <div class="name" *ngIf="isChecked('Having Confidence')" [ngClass]="{'column-count-2': getNames('Having Confidence').length > 4}">
+          <h4 *ngFor="let name of getNames('Having Confidence')" class="text-archivo margin-bottom-0">{{name}}</h4>
         </div>
       </div>
 
@@ -333,8 +333,8 @@
         <h5>Thinking Back</h5>
         <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
 
-        <div class="name" *ngIf="isChecked('Thinking Back')">
-          <h3 *ngFor="let name of getNames('Thinking Back')" class="text-archivo margin-bottom-0">{{name}}</h3>
+        <div class="name" *ngIf="isChecked('Thinking Back')" [ngClass]="{'column-count-2': getNames('Thinking Back').length > 4}">
+          <h4 *ngFor="let name of getNames('Thinking Back')" class="text-archivo margin-bottom-0">{{name}}</h4>
         </div>
       </div>
     </div>
@@ -347,8 +347,8 @@
       <h5>Thinking Alone</h5>
       <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
 
-      <div class="name" *ngIf="isChecked('Thinking Alone')">
-        <h3 *ngFor="let name of getNames('Thinking Alone')" class="text-archivo margin-bottom-0">{{name}}</h3>
+      <div class="name" *ngIf="isChecked('Thinking Alone')" [ngClass]="{'column-count-2': getNames('Thinking Alone').length > 4}">
+        <h4 *ngFor="let name of getNames('Thinking Alone')" class="text-archivo margin-bottom-0">{{name}}</h4>
       </div>
     </div>
 
@@ -356,8 +356,8 @@
       <h5>Joking</h5>
       <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
 
-      <div class="name" *ngIf="isChecked('Joking')">
-        <h3 *ngFor="let name of getNames('Joking')" class="text-archivo margin-bottom-0">{{name}}</h3>
+      <div class="name" *ngIf="isChecked('Joking')" [ngClass]="{'column-count-2': getNames('Joking').length > 4}">
+        <h4 *ngFor="let name of getNames('Joking')" class="text-archivo margin-bottom-0">{{name}}</h4>
       </div>
 
     </div>
@@ -371,8 +371,8 @@
         <h5>Optimism</h5>
         <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
 
-        <div class="name" *ngIf="isChecked('Optimism')">
-          <h3 *ngFor="let name of getNames('Optimism')" class="text-archivo margin-bottom-0">{{name}}</h3>
+        <div class="name" *ngIf="isChecked('Optimism')" [ngClass]="{'column-count-2': getNames('Optimism').length > 4}">
+          <h4 *ngFor="let name of getNames('Optimism')" class="text-archivo margin-bottom-0">{{name}}</h4>
         </div>
       </div>
 
@@ -380,8 +380,8 @@
         <h5>Mentoring</h5>
         <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
 
-        <div class="name" *ngIf="isChecked('Mentoring')">
-          <h3 *ngFor="let name of getNames('Mentoring')" class="text-archivo margin-bottom-0">{{name}}</h3>
+        <div class="name" *ngIf="isChecked('Mentoring')" [ngClass]="{'column-count-2': getNames('Mentoring').length > 4}">
+          <h4 *ngFor="let name of getNames('Mentoring')" class="text-archivo margin-bottom-0">{{name}}</h4>
         </div>
       </div>
 
@@ -389,8 +389,8 @@
         <h5>Peace-making</h5>
         <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
 
-        <div class="name" *ngIf="isChecked('Peace-making')">
-          <h3 *ngFor="let name of getNames('Peace-making')" class="text-archivo margin-bottom-0">{{name}}</h3>
+        <div class="name" *ngIf="isChecked('Peace-making')" [ngClass]="{'column-count-2': getNames('Peace-making').length > 4}">
+          <h4 *ngFor="let name of getNames('Peace-making')" class="text-archivo margin-bottom-0">{{name}}</h4>
         </div>
       </div>
     </div>
@@ -400,8 +400,8 @@
         <h5>Individuality</h5>
         <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
 
-        <div class="name" *ngIf="isChecked('Individuality')">
-          <h3 *ngFor="let name of getNames('Individuality')" class="text-archivo margin-bottom-0">{{name}}</h3>
+        <div class="name" *ngIf="isChecked('Individuality')" [ngClass]="{'column-count-2': getNames('Individuality').length > 4}">
+          <h4 *ngFor="let name of getNames('Individuality')" class="text-archivo margin-bottom-0">{{name}}</h4>
         </div>
       </div>
 
@@ -409,8 +409,8 @@
         <h5>Including</h5>
         <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
 
-        <div class="name" *ngIf="isChecked('Including')">
-          <h3 *ngFor="let name of getNames('Including')" class="text-archivo margin-bottom-0">{{name}}</h3>
+        <div class="name" *ngIf="isChecked('Including')" [ngClass]="{'column-count-2': getNames('Including').length > 4}">
+          <h4 *ngFor="let name of getNames('Including')" class="text-archivo margin-bottom-0">{{name}}</h4>
         </div>
 
       </div>
@@ -419,8 +419,8 @@
         <h5>Enrolling</h5>
         <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
 
-        <div class="name" *ngIf="isChecked('Enrolling')">
-          <h3 *ngFor="let name of getNames('Enrolling')" class="text-archivo margin-bottom-0">{{name}}</h3>
+        <div class="name" *ngIf="isChecked('Enrolling')" [ngClass]="{'column-count-2': getNames('Enrolling').length > 4}">
+          <h4 *ngFor="let name of getNames('Enrolling')" class="text-archivo margin-bottom-0">{{name}}</h4>
         </div>
 
       </div>
@@ -432,8 +432,8 @@
         <h5>Creating Intimacy</h5>
         <img width="120" src="../../assets/img/puzzle-icon-empty.png" />
 
-        <div class="name" *ngIf="isChecked('Creating Intimacy')">
-          <h3 *ngFor="let name of getNames('Creating Intimacy')" class="text-archivo margin-bottom-0">{{name}}</h3>
+        <div class="name" *ngIf="isChecked('Creating Intimacy')" [ngClass]="{'column-count-2': getNames('Creating Intimacy').length > 4}">
+          <h4 *ngFor="let name of getNames('Creating Intimacy')" class="text-archivo margin-bottom-0">{{name}}</h4>
         </div>
 
       </div>
@@ -442,8 +442,8 @@
         <h5>Storytelling</h5>
         <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
 
-        <div class="name" *ngIf="isChecked('Storytelling')">
-          <h3 *ngFor="let name of getNames('Storytelling')" class="text-archivo margin-bottom-0">{{name}}</h3>
+        <div class="name" *ngIf="isChecked('Storytelling')" [ngClass]="{'column-count-2': getNames('Storytelling').length > 4}">
+          <h4 *ngFor="let name of getNames('Storytelling')" class="text-archivo margin-bottom-0">{{name}}</h4>
         </div>
       </div>
 
@@ -451,8 +451,8 @@
         <h5>Connecting</h5>
         <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
 
-        <div class="name" *ngIf="isChecked('Connecting')">
-          <h3 *ngFor="let name of getNames('Connecting')" class="text-archivo margin-bottom-0">{{name}}</h3>
+        <div class="name" *ngIf="isChecked('Connecting')" [ngClass]="{'column-count-2': getNames('Connecting').length > 4}">
+          <h4 *ngFor="let name of getNames('Connecting')" class="text-archivo margin-bottom-0">{{name}}</h4>
         </div>
       </div>
     </div>
@@ -462,8 +462,8 @@
         <h5>Believing</h5>
         <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
 
-        <div class="name" *ngIf="isChecked('Believing')">
-          <h3 *ngFor="let name of getNames('Believing')" class="text-archivo margin-bottom-0">{{name}}</h3>
+        <div class="name" *ngIf="isChecked('Believing')" [ngClass]="{'column-count-2': getNames('Believing').length > 4}">
+          <h4 *ngFor="let name of getNames('Believing')" class="text-archivo margin-bottom-0">{{name}}</h4>
         </div>
       </div>
 
@@ -471,8 +471,8 @@
         <h5>Feeling For Others</h5>
         <img width="120" src="../../assets/img/puzzle-icon-empty.png" />
 
-        <div class="name" *ngIf="isChecked('Feeling For Others')">
-          <h3 *ngFor="let name of getNames('Feeling For Others')" class="text-archivo margin-bottom-0">{{name}}</h3>
+        <div class="name" *ngIf="isChecked('Feeling For Others')" [ngClass]="{'column-count-2': getNames('Feeling For Others').length > 4}">
+          <h4 *ngFor="let name of getNames('Feeling For Others')" class="text-archivo margin-bottom-0">{{name}}</h4>
         </div>
       </div>
     </div>
@@ -484,18 +484,19 @@
 <div class="row text-center margin-top-1 full-width-row">
     <div class="columns small-4">
       <div class="columns small-11 text-center bg-blue small-centered">
-      <h1 style="margin-bottom: 0px;" class="text-archivo">Procedural</h1>
-      <h5>Concerned with process, operations, logistics, tactics</h5>
+      <h1 style="margin-bottom: 0px;" class="text-archivo">PROCEDURAL</h1>
+      <h5 class="margin-top-minus-8">Concerned with process, operations, logistics,</h5><h5>tactics</h5>
     </div>
   </div>
 
-<div class="columns small-4">
-  <h4 class="text-center"><img width="100" src="../../assets/img/noWayOutLogoSmall.png"></h4>
+<div class="columns small-4" id="logo">
+  <h4 class="text-center"><img width="300" src="../../assets/img/noWayOutLogoSmall.png"></h4>
+  <h2 class="text-archivo">NOWAYOUTSTL.COM</h2>
 </div>
 
 <div class="columns small-4">
   <div class="columns small-11 text-center bg-yellow small-centered">
-    <h1 style="margin-bottom: 0px;" class="text-archivo">Relational</h1>
+    <h1 style="margin-bottom: 0px;" class="text-archivo">RELATIONAL</h1>
     <h5>Concerned with feelings, morale, teamwork, development of people</h5>
   </div>
 </div>
