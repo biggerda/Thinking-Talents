@@ -110,6 +110,10 @@
     margin-bottom: 0;
 }
 
+.max-height-130{
+    max-height: 130px;
+}
+
 .margin-top-minus-8 {
     margin-top: -8px;
 }
@@ -119,6 +123,7 @@
 }
 
 div.name { 
+   white-space: nowrap;
    position: absolute; 
    top: 25px; 
    left: 0; 
