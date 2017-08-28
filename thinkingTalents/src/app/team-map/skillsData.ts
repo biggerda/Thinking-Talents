@@ -26,8 +26,7 @@ let skills = [
     {
         "name": "Competing",
         "description": "Compares performance to that of others.",
-        "checked": false,
-        "type": "innovative"
+        "checked": false
     },
     {
         "name": "Connecting",
@@ -162,7 +161,8 @@ let skills = [
     {
         "name": "Standing Out",
         "description": "Wants to be known for making a difference and be admired for credibility.",
-        "checked": false
+        "checked": false,
+        "type": "innovative"
     },
     {
         "name": "Storytelling",

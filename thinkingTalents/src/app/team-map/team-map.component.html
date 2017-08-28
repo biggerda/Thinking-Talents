@@ -26,7 +26,7 @@
 
     <div class="large-8 columns">
       <div *ngFor="let skill of skillsList; let lastItem = last; let i = index;" class="large-3 columns" [ngClass]="{'end':lastItem}">
-        <label for="checkbox1" title="{{skill.description}}">{{skill.name}}</label><input id="checkbox1" type="checkbox"
+        <label title="{{skill.description}}">{{skill.name}}</label><input id="checkbox1" type="checkbox"
           (change)="updateSkills(skill)" [(ngModel)]="skill.checked">
       </div>
     </div>
@@ -122,7 +122,7 @@
       <div class="columns small-4 small-offset-2 puzzle">
         <h5>Collecting</h5>
         <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
-                
+
         <div class="name" *ngIf="isChecked('Collecting')" [ngClass]="{'column-count-2': getNames('Collecting').length > 4}">
           <h4 *ngFor="let name of getNames('Collecting')" class="text-archivo margin-bottom-0">{{name}}</h4>
         </div>
@@ -297,7 +297,7 @@
       <div class="columns small-4 end puzzle">
         <h5>Making It Happen</h5>
         <img width="120" src="../../assets/img/puzzle-icon-empty.png"/>
-                
+
         <div class="name" *ngIf="isChecked('Making It Happen')" [ngClass]="{'column-count-2': getNames('Making It Happen').length > 4}">
           <h4 *ngFor="let name of getNames('Making It Happen')" class="text-archivo margin-bottom-0">{{name}}</h4>
         </div>
