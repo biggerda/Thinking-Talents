@@ -56,34 +56,55 @@
   src: url('../fonts/swiss-721-black-bt-59337c07f0848.ttf');
 }
 
-.text-archivo { font-family: 'Archivo Black'}
+@font-face {
+  font-family: 'Stencil Std';
+  src: url('../fonts/stencil-std.ttf');
+}
+
+.text-archivo {
+  font-family: 'Archivo Black';
+}
+
+h2.text-archivo {
+  font-family: 'Archivo Black';
+  font-size: 20pt;
+}
+
+h1 {
+  font-size: 24pt;
+}
+
+#main-title {
+  font-size: 32pt;
+  font-weight: bold;
+}
 
 .text-bold {
     font-weight: bold;
 }
 
 .text-stencil {
-    font-family: 'Stardos Stencil';
+    font-family: 'Stencil Std';
 }
 
 .bg-red {
-    background-color: #CB7764;   
+    background-color: rgba(255,0,0,0.4);
 }
 
 .bg-green {
-    background-color: #98C883;
+    background-color: rgba(0,225,0,0.4);
 }
 
 .bg-blue {
-    background-color: #96BDD8;
+    background-color: rgba(0,128,255,0.4);
 }
 
 .bg-yellow {
-    background-color: #FDEF90;
+    background-color: rgba(255,225,0,0.4);
 }
 
 .padded-row {
-    margin-top: 10%;
+    margin-top: 7%;
 }
 
 .margin-top-5 {
@@ -94,12 +115,20 @@
     margin-top: 15%;
 }
 
+.quarter-column {
+  width: 25%;
+}
+
 .margin-top-1 {
     margin-top: 1%;
 }
 
 .padding-top-half {
     padding-top: 0.5%;
+}
+
+.margin-top-15 {
+    margin-bottom: 15%;
 }
 
 .margin-bottom-1 {
@@ -118,16 +147,16 @@
     margin-top: -8px;
 }
 
-.puzzle { 
-   position: relative; 
+.puzzle {
+   position: relative;
 }
 
-div.name { 
+div.name {
    white-space: nowrap;
-   position: absolute; 
-   top: 25px; 
-   left: 0; 
-   width: 100%; 
+   position: absolute;
+   top: 25px;
+   left: 0;
+   width: 100%;
 }
 
 div.name h4 {
@@ -137,23 +166,55 @@ div.name h4 {
 #teamMap{
     background: url('../img/noWayOutWatermark.png');
     background-repeat: no-repeat;
-    background-size: 70%;
+    background-size: 90%;
     background-position: center;
+    background-color:white;
+    height: 1080px;
+    width: 1920px;
 }
 
 html {
     height: 100%
 }
 
+.down-some {
+  position:relative;
+  top:75px;
+}
+
+.central-border-top {
+border-top:    1px solid black;
+border-right:  1px solid black;
+border-left:   1px solid black;
+padding-top: 20px;
+}
+
+.central-border-bottom {
+border-right:  1px solid black;
+border-left:   1px solid black;
+border-bottom:    1px solid black;
+padding-bottom: 50px;
+}
+
+.central-border-sides {
+ border-top: 1px solid black;
+ margin-top:20px;
+ padding-top:20px;
+}
+
+#special-spacing {
+  margin-bottom: 30px;
+}
+
 #logo{
     position: relative;
-    top: -270px
+    top: -125px;
 }
 
 .wrapper {
     margin: auto;
-    height: 1264.67px;
-    width: 2083.1329px;
+    height: 1080px;
+    width: 1920px;
 }
 
 .full-width-row {
@@ -161,11 +222,37 @@ html {
 }
 
 .column-count-2 {
-    left: 20px !important;
-    width: 80% !important;
+    //left: 24px !important;
+    //width: 80% !important;
+    display:inline-block;
     column-count: 2;
+    text-align: center;
+    padding: 1px;
+    line-height: 1;
 }
 .column-count-2 h4 {
-    font-size: 15px;
+ //   font-size: 15px;
+}
+
+h4 {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.stuffed {
+  font-size: 22px;
+}
+
+.report {
+  font-size: 24px;
+}
+
+.red {
+  color:red;
+}
+
+.blindspot {
+  font-size: 24px;
+  padding-left: 75px;
 }
 
