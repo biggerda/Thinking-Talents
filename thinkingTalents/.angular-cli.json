@@ -23,7 +23,6 @@
         "./assets/scss/app.scss"
       ],
       "scripts": [
-        "../node_modules/foundation-sites/vendor/jquery/dist/jquery.min.js",
         "../node_modules/foundation-sites/dist/js/foundation.min.js",
         "./assets/js/app.js"
       ],
