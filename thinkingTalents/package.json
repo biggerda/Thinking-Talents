@@ -12,7 +12,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "preinstall": "npm install -g http-server"
+    "preinstall": "npm install -g @angular/cli typescript",
+    "postinstall": "ng build"
   },
   "private": true,
   "dependencies": {

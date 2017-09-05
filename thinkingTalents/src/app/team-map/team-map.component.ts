@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import skills from './skillsData';
-import jsPDF from 'jsPDF'
+//import jsPDF from 'jsPDF'
 import jquery from 'jquery'
 import * as html2canvas from "html2canvas"
 
