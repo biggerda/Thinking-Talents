@@ -238,7 +238,7 @@ export class TeamMapComponent implements OnInit {
 
     html2canvas(jquery("#teamMap")[0], {
       dpi: 192,
-      proxy: "http://localhost:4200",
+      //proxy: "http://localhost:4200",
       logging: true,
     }).then((canvas) => {
 
