@@ -124,7 +124,7 @@ h1 {
 }
 
 .padding-top-half {
-    padding-top: 0.5%;
+    padding-top: 0.3%;
 }
 
 .margin-top-15 {
@@ -169,8 +169,8 @@ div.name h4 {
     background-size: 90%;
     background-position: center;
     background-color:white;
-    height: 1080px;
-    width: 1920px;
+    max-height: 1080px;
+    //width: 1920px;
 }
 
 html {
@@ -189,7 +189,7 @@ border-left:   1px solid black;
 padding-top: 20px;
 }
 
-.central-border-bottom {
+#central-border-bottom {
 border-right:  1px solid black;
 border-left:   1px solid black;
 border-bottom:    1px solid black;

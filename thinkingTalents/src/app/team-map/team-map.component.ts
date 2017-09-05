@@ -244,20 +244,19 @@ export class TeamMapComponent implements OnInit {
       logging: true,
     }).then((canvas) => {
 
-      //var img = canvas.toDataURL('image/png');
-        //window.open(img);
-
+        //JSPDF implementation
         //this.doc = new jsPDF('landscape', 'pt','legal');
-        // //this.doc.text(10, 10, "hello!");
+        //this.doc.text(10, 10, "hello!");
         //this.doc.addImage(img, 'JPEG', 0, 0, 1008, 612);
-
         //this.doc.save('sample.pdf');
         //this.doc.output("dataurlnewwindow");
 
-
-
         var img = canvas.toDataURL('image/jpeg');
         window.open(img);
+
+        //img.href = canvas.replace("image/jpeg", "image/octet-stream");
+        //img.download = "YOUR_TEAM_MAP.jpg";
+
     });
   }
 
