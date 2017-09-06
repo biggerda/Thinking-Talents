@@ -65,18 +65,29 @@
   font-family: 'Archivo Black';
 }
 
+h5.quad-desc {
+    line-height: 110%;
+    padding-bottom: 2px;
+}
+
+h5 {
+  font-family: 'Swiss Black';    
+}
+
 h2.text-archivo {
   font-family: 'Archivo Black';
   font-size: 20pt;
 }
 
 h1 {
-  font-size: 24pt;
+  font-size: 22pt;
 }
 
 #main-title {
-  font-size: 32pt;
+  font-size: 35pt;
   font-weight: bold;
+  line-height: 110%;
+  margin-bottom: 0px;
 }
 
 .text-bold {
@@ -112,7 +123,7 @@ h1 {
 }
 
 .margin-top-15 {
-    margin-top: 15%;
+    margin-top: 10%;
 }
 
 .quarter-column {
@@ -120,7 +131,7 @@ h1 {
 }
 
 .margin-top-1 {
-    margin-top: 1%;
+    margin-top: 2%;
 }
 
 .padding-top-half {
@@ -187,6 +198,7 @@ border-top:    1px solid black;
 border-right:  1px solid black;
 border-left:   1px solid black;
 padding-top: 20px;
+padding-bottom: 20px
 }
 
 .central-border-bottom {
@@ -198,12 +210,22 @@ padding-bottom: 50px;
 
 .central-border-sides {
  border-top: 1px solid black;
- margin-top:20px;
- padding-top:20px;
+ margin-top: 40px;
+ padding-top: 10px;
 }
 
 #special-spacing {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  margin-top: 55px;
+}
+
+.ta-spacing {
+    margin-top: 23px;
+}
+
+.j-spacing {
+    margin-top: 45px;
+    margin-bottom: 35px;
 }
 
 #logo{
