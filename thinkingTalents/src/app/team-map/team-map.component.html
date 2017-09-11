@@ -536,8 +536,10 @@
           <span class="blindspot">Blind Spot: </span>
           <span *ngIf="(player.a_talents > 0) && (player.i_talents > 0) && (player.r_talents > 0) && (player.p_talents > 0)">None</span>
 
-          <!-- What about three quadrants missing? -->
+          <!-- Prints Blindspots for each Player -->
+          <span *ngIf="(player.blindspot)">{{player.blindspot}}</span>
 
+<!--
           <span *ngIf="(player.a_talents == 0) && (player.i_talents == 0) && (player.r_talents == 0) && (player.p_talents > 0)">Cerebral (A/I) / Right-Brained</span>
           <span *ngIf="(player.a_talents == 0) && (player.i_talents == 0) && (player.r_talents > 0) && (player.p_talents == 0)">Cerebral (A/I) / Left-Brained</span>
           <span *ngIf="(player.a_talents == 0) && (player.i_talents > 0) && (player.r_talents == 0) && (player.p_talents == 0)">Limbic (R/P) / Left-Brained</span>
@@ -545,7 +547,7 @@
 
           <span *ngIf="(player.a_talents == 0) && (player.i_talents == 0) && (player.r_talents > 0) && (player.p_talents > 0)">Cerebral (A/I)</span>
           <span *ngIf="(player.a_talents == 0) && (player.i_talents > 0) && (player.r_talents > 0) && (player.p_talents == 0)">Left-Brained</span>
-          <span *ngIf="(player.a_talents > 0) && (player.i_talents > 0) && (player.r_talents == 0) && (player.p_talents == 0)">Limbic (R/P): Thoroughly clean your living space, Jogging</span>
+          <span *ngIf="(player.a_talents > 0) && (player.i_talents > 0) && (player.r_talents == 0) && (player.p_talents == 0)">Limbic (R/P)</span>
           <span *ngIf="(player.a_talents > 0) && (player.i_talents == 0) && (player.r_talents == 0) && (player.p_talents > 0)">Right-Brained</span>
           <span *ngIf="(player.a_talents == 0) && (player.i_talents > 0) && (player.r_talents == 0) && (player.p_talents > 0)">Facts vs. Feelings (A/R)</span>
           <span *ngIf="(player.a_talents > 0) && (player.i_talents == 0) && (player.r_talents > 0) && (player.p_talents == 0)">Entrepreneur (I/P)</span>
@@ -554,7 +556,7 @@
           <span *ngIf="(player.a_talents > 0) && (player.i_talents == 0) && (player.r_talents > 0) && (player.p_talents > 0)">Innovative</span>
           <span *ngIf="(player.a_talents > 0) && (player.i_talents > 0) && (player.r_talents == 0) && (player.p_talents > 0)">Relational</span>
           <span *ngIf="(player.a_talents > 0) && (player.i_talents > 0) && (player.r_talents > 0) && (player.p_talents == 0)">Procedural</span>
-
+-->
 
       </div>
     </div>

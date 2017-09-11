@@ -156,7 +156,24 @@ export class TeamMapComponent implements OnInit {
 
       //alert( player.name + " | Analytic = " + player.a_talents + ", Innovative = " + player.i_talents + ", Relational = " + player.r_talents + ", Procedural = " + player.p_talents );
 
-      }
+      if( player.a_talents > 0 && player.i_talents > 0 && player.r_talents > 0 && player.p_talents > 0 ) player.blindspot = "None";
+      else if( player.a_talents == 0 && player.i_talents > 0 && player.r_talents > 0 && player.p_talents > 0 ) player.blindspot = "Analytical";
+      else if( player.a_talents > 0 && player.i_talents > 0 && player.r_talents > 0 && player.p_talents == 0 ) player.blindspot = "Procedural";
+      else if( player.a_talents > 0 && player.i_talents > 0 && player.r_talents == 0 && player.p_talents > 0 ) player.blindspot = "Relational";
+      else if( player.a_talents > 0 && player.i_talents == 0 && player.r_talents > 0 && player.p_talents > 0 ) player.blindspot = "Innovative";
+      else if( (player.a_talents == 0) && (player.i_talents == 0) && (player.r_talents > 0) && (player.p_talents > 0)) player.blindspot = "Cerebral (A/I)";
+      else if( (player.a_talents == 0) && (player.i_talents > 0) && (player.r_talents > 0) && (player.p_talents == 0)) player.blindspot = "Left-Brained";
+      else if( (player.a_talents > 0) && (player.i_talents > 0) && (player.r_talents == 0) && (player.p_talents == 0)) player.blindspot = "Limbic (R/P)";
+      else if( (player.a_talents > 0) && (player.i_talents == 0) && (player.r_talents == 0) && (player.p_talents > 0)) player.blindspot = "Right-Brained";
+      else if( (player.a_talents == 0) && (player.i_talents > 0) && (player.r_talents == 0) && (player.p_talents > 0)) player.blindspot = "Facts vs. Feelings (A/R)";
+      else if( (player.a_talents > 0) && (player.i_talents == 0) && (player.r_talents > 0) && (player.p_talents == 0)) player.blindspot = "Entrepreneur (I/P)";
+      else if( player.a_talents > 0 && player.i_talents == 0 && player.r_talents == 0 && player.p_talents == 0 ) player.blindspot = "Limbic (R/P) / Right-Brained";      
+      else if( player.a_talents == 0 && player.i_talents == 0 && player.r_talents == 0 && player.p_talents > 0 ) player.blindspot = "Cerebral (A/I) / Right-Brained";
+      else if( player.a_talents == 0 && player.i_talents == 0 && player.r_talents > 0 && player.p_talents == 0 ) player.blindspot = "Cerebral (A/I) / Left-Brained";
+      else if( player.a_talents == 0 && player.i_talents > 0 && player.r_talents == 0 && player.p_talents == 0 ) player.blindspot = "Limbic (R/P) / Left-Brained";
+      else {}
+
+      }    
 
     });
 
