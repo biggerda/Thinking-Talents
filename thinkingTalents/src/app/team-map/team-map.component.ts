@@ -23,7 +23,9 @@ export class TeamMapComponent implements OnInit {
   constructor() {
 
     this.team = {
-      players: []
+      players: [],
+      teampreferences: [],
+      teamblindspots: []
     };
 
     this.currentPlayer = {
@@ -121,6 +123,9 @@ export class TeamMapComponent implements OnInit {
     }
 
     this.mode = "create";
+
+    this.team.teamblindspots = [];
+
   }
 
   buildTeamMap() {
@@ -156,7 +161,28 @@ export class TeamMapComponent implements OnInit {
 
       //alert( player.name + " | Analytic = " + player.a_talents + ", Innovative = " + player.i_talents + ", Relational = " + player.r_talents + ", Procedural = " + player.p_talents );
 
-      if( player.a_talents > 0 && player.i_talents > 0 && player.r_talents > 0 && player.p_talents > 0 ) player.blindspot = "None";
+
+      //Decision Tree for Brain Preference
+      if( (player.a_talents == player.p_talents) && (player.r_talents && player.i_talents) && (player.a_talents == player.i_talents)) player.talentPref = "Whole-Brained";
+      else if( (player.p_talents == (player.r_talents && player.i_talents) && (player.p_talents > player.a_talents)) ) player.talentPref = "Limbic (R/P) / Right-Brained";
+      else if( (player.a_talents == (player.i_talents && player.r_talents) && (player.a_talents > player.p_talents)) ) player.talentPref = "Cerebral (A/I) / Right-Brained";
+      else if( (player.a_talents == (player.i_talents && player.p_talents) && (player.a_talents > player.r_talents)) ) player.talentPref = "Cerebral (A/I) / Left-Brained";
+      else if( (player.a_talents == (player.p_talents && player.r_talents) && (player.a_talents > player.i_talents)) ) player.talentPref = "Limbic (R/P) / Left-Brained";
+      else if( (player.a_talents == player.i_talents) && (player.a_talents > (player.p_talents && player.r_talents)) ) player.talentPref = "Cerebral (A/I)";
+      else if( (player.a_talents == player.p_talents) && (player.a_talents > (player.i_talents && player.r_talents)) ) player.talentPref = "Left-Brained";
+      else if( (player.p_talents == player.r_talents) && (player.p_talents > (player.a_talents && player.i_talents)) ) player.talentPref = "Limbic (R/P)";
+      else if( (player.r_talents == player.i_talents) && (player.r_talents > (player.a_talents && player.p_talents)) ) player.talentPref = "Right-Brained";
+      else if( (player.a_talents == player.r_talents) && (player.a_talents > (player.i_talents && player.p_talents)) ) player.talentPref = "Facts vs. Feelings (A/R)";
+      else if( (player.i_talents == player.p_talents) && (player.i_talents > (player.a_talents && player.r_talents)) ) player.talentPref = "Entrepreneur (I/P)";
+      else if( (player.a_talents > player.p_talents) && (player.a_talents > player.r_talents) && (player.a_talents > player.i_talents) ) player.talentPref = "Analytical";
+      else if( (player.p_talents > player.a_talents) && (player.p_talents > player.r_talents) && (player.p_talents > player.i_talents) ) player.talentPref = "Procedural";
+      else if( (player.r_talents > player.a_talents) && (player.r_talents > player.p_talents) && (player.r_talents > player.i_talents) ) player.talentPref = "Relational";
+      else if( (player.i_talents > player.a_talents) && (player.i_talents > player.r_talents) && (player.i_talents > player.p_talents) ) player.talentPref = "Innovative";
+      else {}
+
+
+      //Decision Tree for Blind Spot
+      if( player.a_talents > 0 && player.i_talents > 0 && player.r_talents > 0 && player.p_talents > 0 ) player.blindspot = "None (Whole-Brained)";
       else if( player.a_talents == 0 && player.i_talents > 0 && player.r_talents > 0 && player.p_talents > 0 ) player.blindspot = "Analytical";
       else if( player.a_talents > 0 && player.i_talents > 0 && player.r_talents > 0 && player.p_talents == 0 ) player.blindspot = "Procedural";
       else if( player.a_talents > 0 && player.i_talents > 0 && player.r_talents == 0 && player.p_talents > 0 ) player.blindspot = "Relational";
@@ -173,9 +199,18 @@ export class TeamMapComponent implements OnInit {
       else if( player.a_talents == 0 && player.i_talents > 0 && player.r_talents == 0 && player.p_talents == 0 ) player.blindspot = "Limbic (R/P) / Left-Brained";
       else {}
 
+
+      //alert (player.blindspot);
+      
+      if( this.team.teamblindspots.indexOf( player.blindspot ) === -1) this.team.teamblindspots.push( player.blindspot );
+
+      //alert(player.name + "\'s Blindspot is " + player.blindspot);
+    
       }    
 
     });
+
+    //alert( this.team.teamblindspots );  
 
     this.mapSkills.forEach((mapSkill) => {
 
@@ -301,10 +336,15 @@ interface player {
   p_talents?: number;
   r_talents?: number;
   i_talents?: number;
+  talentPref?: string;
+  blindspot?: string;
 }
 
 interface team {
   players: Array<player>;
   stuffed?: boolean;
   team_name?: string;
+  teampreferences?: Array<string>;
+  teamblindspots?: Array<string>;
+  a_blindspots_names?: string;
 }

@@ -532,36 +532,134 @@
           <span [ngClass]="{'red': player.p_talents == 0}">Procedural = {{player.p_talents}}</span>
 
           <br>
-
-          <span class="blindspot">Blind Spot: </span>
-          <span *ngIf="(player.a_talents > 0) && (player.i_talents > 0) && (player.r_talents > 0) && (player.p_talents > 0)">None</span>
-
+          
           <!-- Prints Blindspots for each Player -->
-          <span *ngIf="(player.blindspot)">{{player.blindspot}}</span>
+          <ul class="scoot">
+            <li>
+              <span>Preference: </span>
 
-<!--
-          <span *ngIf="(player.a_talents == 0) && (player.i_talents == 0) && (player.r_talents == 0) && (player.p_talents > 0)">Cerebral (A/I) / Right-Brained</span>
-          <span *ngIf="(player.a_talents == 0) && (player.i_talents == 0) && (player.r_talents > 0) && (player.p_talents == 0)">Cerebral (A/I) / Left-Brained</span>
-          <span *ngIf="(player.a_talents == 0) && (player.i_talents > 0) && (player.r_talents == 0) && (player.p_talents == 0)">Limbic (R/P) / Left-Brained</span>
-          <span *ngIf="(player.a_talents > 0) && (player.i_talents == 0) && (player.r_talents == 0) && (player.p_talents == 0)">Limbic (R/P) / Right-Brained</span>
+              <strong>
+                <span *ngIf="(player.talentPref)">{{player.talentPref}}</span>
+                <span *ngIf="(player.talentPref == 'Cerebral (A/I)')"> (Intellectual)</span>
+                <span *ngIf="(player.talentPref == 'Left-Brained')"> (Rational)</span>
+                <span *ngIf="(player.talentPref == 'Limbic (R/P)')"> (Instinctive)</span>
+                <span *ngIf="(player.talentPref == 'Right-Brained')"> (Intuitive)</span>
+              </strong>
+            </li>
+          
+          <!-- Prints Blindspots for each Player -->
+            <li>
+              <span>Blind Spot: </span>
+              <span *ngIf="(player.blindspot)">{{player.blindspot}}</span>
+            </li>
 
-          <span *ngIf="(player.a_talents == 0) && (player.i_talents == 0) && (player.r_talents > 0) && (player.p_talents > 0)">Cerebral (A/I)</span>
-          <span *ngIf="(player.a_talents == 0) && (player.i_talents > 0) && (player.r_talents > 0) && (player.p_talents == 0)">Left-Brained</span>
-          <span *ngIf="(player.a_talents > 0) && (player.i_talents > 0) && (player.r_talents == 0) && (player.p_talents == 0)">Limbic (R/P)</span>
-          <span *ngIf="(player.a_talents > 0) && (player.i_talents == 0) && (player.r_talents == 0) && (player.p_talents > 0)">Right-Brained</span>
-          <span *ngIf="(player.a_talents == 0) && (player.i_talents > 0) && (player.r_talents == 0) && (player.p_talents > 0)">Facts vs. Feelings (A/R)</span>
-          <span *ngIf="(player.a_talents > 0) && (player.i_talents == 0) && (player.r_talents > 0) && (player.p_talents == 0)">Entrepreneur (I/P)</span>
-
-          <span *ngIf="(player.a_talents == 0) && (player.i_talents > 0) && (player.r_talents > 0) && (player.p_talents > 0)">Analytic</span>
-          <span *ngIf="(player.a_talents > 0) && (player.i_talents == 0) && (player.r_talents > 0) && (player.p_talents > 0)">Innovative</span>
-          <span *ngIf="(player.a_talents > 0) && (player.i_talents > 0) && (player.r_talents == 0) && (player.p_talents > 0)">Relational</span>
-          <span *ngIf="(player.a_talents > 0) && (player.i_talents > 0) && (player.r_talents > 0) && (player.p_talents == 0)">Procedural</span>
--->
+          </ul>
 
       </div>
     </div>
 
+    <br><br>
 
+
+    <div class="row" *ngIf="team.teamblindspots.length > 0">
+      <div class="large-12 columns">
+        <label><h3>Team Blindspots ({{team.teamblindspots.length}})</h3>
+          </label>
+      </div>
+    </div>
+  
+    
+    <div class="row" *ngFor="let tbspot of team.teamblindspots; let i = index;">
+      <div class="large-12 columns" class="report">
+        <img src="../../assets/img/blindicon.png">
+        <span>Blind Spot:<strong> {{tbspot}} </strong></span>
+
+        <ul class="scoot">
+          <li *ngIf="tbspot == 'None (Whole-Brained)'" >Starting a Podcast<br></li>
+          <li *ngIf="tbspot == 'None (Whole-Brained)'" >Starting a Non-For-Profit Organization<br></li>
+
+          <li *ngIf="tbspot == 'Analytical'" >Convert Your Retirement Dreams Into A Quantitative Formula<br></li>
+          <li *ngIf="tbspot == 'Analytical'" >Play Devil's Advocate<br></li>
+          <li *ngIf="tbspot == 'Analytical'" >Take Apart A Frequently Used Machine and Put It Back Together<br></li>
+          
+          <li *ngIf="tbspot == 'Procedural'" >Tennis|Ping Pong<br></li>
+          <li *ngIf="tbspot == 'Procedural'" >Bowling<br></li>
+          <li *ngIf="tbspot == 'Procedural'" >Assemble Furniture By The Instructions<br></li>
+          <li *ngIf="tbspot == 'Procedural'" >Prepare A Family Tree<br></li>
+          <li *ngIf="tbspot == 'Procedural'" >Learn A Line Dance (Cha Cha Slide)<br></li>
+          
+          <li *ngIf="tbspot == 'Relational'" >Karaoke<br></li>
+          <li *ngIf="tbspot == 'Relational'" >People Watching|Eavesdropping<br></li>
+          <li *ngIf="tbspot == 'Relational'" >Take 10 Minute "Deep Breathing Break" Morning/Noon/Night<br></li>
+          <li *ngIf="tbspot == 'Relational'" >Play With Children The Way They Want To Play<br></li>          
+
+          <li *ngIf="tbspot == 'Innovative'" >Nature Watch<br></li>
+          <li *ngIf="tbspot == 'Innovative'" >Photography<br></li>
+          <li *ngIf="tbspot == 'Innovative'" >Create A Family/Personal Logo<br></li>    
+        
+          <li *ngIf="tbspot == 'Cerebral (A/I)'" >Learn To Play An Instrument<br></li>
+          <li *ngIf="tbspot == 'Cerebral (A/I)'" >Wine Tasting<br></li>
+          <li *ngIf="tbspot == 'Cerebral (A/I)'" >Allow Yourself to Daydream For 15 Minutes Before Getting Out Of Bed<br></li>    
+
+          <li *ngIf="tbspot == 'Limbic (R/P)'" >Gardening<br></li>
+          <li *ngIf="tbspot == 'Limbic (R/P)'" >Listen To The Instrumental Version of Your Favorite Album<br></li>
+          <li *ngIf="tbspot == 'Limbic (R/P)'" >Volunteer<br></li>
+          <li *ngIf="tbspot == 'Limbic (R/P)'" >Meet A New Person Everyday For A Week<br></li>
+          <li *ngIf="tbspot == 'Limbic (R/P)'" >Thoroughly Clean Your Living Space<br></li>
+
+          <li *ngIf="tbspot == 'Left-Brained'" >DIY Projects<br></li>
+          <li *ngIf="tbspot == 'Left-Brained'" >Write A Critical Review<br></li>
+          <li *ngIf="tbspot == 'Left-Brained'" >Record A Podcast<br></li>  
+
+          <li *ngIf="tbspot == 'Right-Brained'" >Yoga<br></li>
+          <li *ngIf="tbspot == 'Right-Brained'" >Cook For Others<br></li>
+          <li *ngIf="tbspot == 'Right-Brained'" >Read or Join Book Club<br></li>
+          <li *ngIf="tbspot == 'Right-Brained'" >Wear Something Silly Once A Week<br></li>      
+          
+          <li *ngIf="tbspot == 'Facts vs. Feelings (A/R)'" >Golf<br></li>
+          <li *ngIf="tbspot == 'Facts vs. Feelings (A/R)'" >Billiards or Darts<br></li>
+          <li *ngIf="tbspot == 'Facts vs. Feelings (A/R)'" >Strategy Games and Puzzles<br></li>
+          <li *ngIf="tbspot == 'Facts vs. Feelings (A/R)'" >Playing Dominos<br></li> 
+
+          <li *ngIf="tbspot == 'Entrepreneur (I/P)'" >Fly A Drone<br></li>
+          <li *ngIf="tbspot == 'Entrepreneur (I/P)'" >Invent A "Gourmet" Dish And Prepare It<br></li>
+          <li *ngIf="tbspot == 'Entrepreneur (I/P)'" >Develop A Personal Budget<br></li>
+          <li *ngIf="tbspot == 'Entrepreneur (I/P)'" >Organize Your Pictures and Music Files<br></li>
+          <li *ngIf="tbspot == 'Entrepreneur (I/P)'" >Be Exactly On Time All Day<br></li>
+
+          <li *ngIf="tbspot == 'Limbic (R/P) / Right-Brained'" >Listen To The Instrumental Version of Your Favorite Album<br></li>
+          <li *ngIf="tbspot == 'Limbic (R/P) / Right-Brained'" >Meet A New Person Everyday For A Week<br></li>
+          <li *ngIf="tbspot == 'Limbic (R/P) / Right-Brained'" >Thoroughly Clean Your Living Space<br></li>
+          <li *ngIf="tbspot == 'Limbic (R/P) / Right-Brained'" >Yoga<br></li>
+          <li *ngIf="tbspot == 'Limbic (R/P) / Right-Brained'" >Wear Something Silly Once A Week<br></li>
+          <li *ngIf="tbspot == 'Limbic (R/P) / Right-Brained'" >Cook For Others<br></li>
+
+          <li *ngIf="tbspot == 'Cerebral (A/I) / Right-Brained'" >Learn To Play An Instrument<br></li>
+          <li *ngIf="tbspot == 'Cerebral (A/I) / Right-Brained'" >Wine Tasting<br></li>
+          <li *ngIf="tbspot == 'Cerebral (A/I) / Right-Brained'" >Allow Yourself to Daydream For 15 Minutes Before Getting Out Of Bed<br></li>
+          <li *ngIf="tbspot == 'Cerebral (A/I) / Right-Brained'" >Yoga<br></li>
+          <li *ngIf="tbspot == 'Cerebral (A/I) / Right-Brained'" >Wear Something Silly Once A Week<br></li>
+          <li *ngIf="tbspot == 'Cerebral (A/I) / Right-Brained'" >Cook For Others<br></li>
+
+          <li *ngIf="tbspot == 'Cerebral (A/I) / Left-Brained'" >Learn To Play An Instrument<br></li>
+          <li *ngIf="tbspot == 'Cerebral (A/I) / Left-Brained'" >Wine Tasting<br></li>
+          <li *ngIf="tbspot == 'Cerebral (A/I) / Left-Brained'" >Allow Yourself to Daydream For 15 Minutes Before Getting Out Of Bed<br></li>
+          <li *ngIf="tbspot == 'Cerebral (A/I) / Left-Brained'" >DIY Projects<br></li>
+          <li *ngIf="tbspot == 'Cerebral (A/I) / Left-Brained'" >Write A Critical Review<br></li>
+          <li *ngIf="tbspot == 'Cerebral (A/I) / Left-Brained'" >Record A Podcast<br></li>
+
+          <li *ngIf="tbspot == 'Limbic (R/P) / Left-Brained'" >Listen To The Instrumental Version of Your Favorite Album<br></li> 
+          <li *ngIf="tbspot == 'Limbic (R/P) / Left-Brained'" >Meet A New Person Everyday For A Week<br></li> 
+          <li *ngIf="tbspot == 'Limbic (R/P) / Left-Brained'" >Thoroughly Clean Your Living Space<br></li> 
+          <li *ngIf="tbspot == 'Limbic (R/P) / Left-Brained'" >DIY Projects<br></li> 
+          <li *ngIf="tbspot == 'Limbic (R/P) / Left-Brained'" >Write A Critical Review<br></li> 
+          <li *ngIf="tbspot == 'Limbic (R/P) / Left-Brained'" >Record A Podcast<br></li> 
+        </ul>
+
+      </div>
+    </div>
+
+    <br><br><br><br><br><br><br>
 </div>
 
 
