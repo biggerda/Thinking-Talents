@@ -312,6 +312,32 @@ export class TeamMapComponent implements OnInit {
     });
   }
 
+  printReport() {
+    
+        html2canvas(jquery("#teamReport")[0], {
+          dpi: 192,
+          letterRendering: true,
+          allowTaint: true,
+          //proxy: "http://localhost:4200",
+          logging: true,
+        }).then((canvas) => {
+    
+            //JSPDF implementation
+            //this.doc = new jsPDF('landscape', 'pt','legal');
+            //this.doc.text(10, 10, "hello!");
+            //this.doc.addImage(img, 'JPEG', 0, 0, 1008, 612);
+            //this.doc.save('sample.pdf');
+            //this.doc.output("dataurlnewwindow");
+    
+            var rpt = canvas.toDataURL('image/jpeg');
+            window.open(rpt);
+    
+            //img.href = canvas.replace("image/jpeg", "image/octet-stream");
+            //img.download = "YOUR_TEAM_MAP.jpg";
+    
+        });
+      }
+
 
 }
 interface skill {

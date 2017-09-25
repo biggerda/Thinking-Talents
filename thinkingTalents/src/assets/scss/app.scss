@@ -74,6 +74,10 @@ h5 {
   font-family: 'Swiss Black';    
 }
 
+.ttheading {
+    font-family: 'Myriad Pro';
+}
+
 h2.text-archivo {
   font-family: 'Archivo Black';
   font-size: 20pt;
@@ -84,7 +88,7 @@ h1 {
 }
 
 #main-title {
-  font-size: 35pt;
+  font-size: 32pt;
   font-weight: bold;
   line-height: 110%;
   margin-bottom: 0px;
@@ -100,18 +104,26 @@ h1 {
 
 .bg-red {
     background-color: rgba(255,0,0,0.4);
+    position: relative;
+    left: 70px;
 }
 
 .bg-green {
     background-color: rgba(0,225,0,0.4);
+    position: relative;
+    right: 70px;
 }
 
 .bg-blue {
     background-color: rgba(0,128,255,0.4);
+    position: relative;
+    left: 70px;
 }
 
 .bg-yellow {
     background-color: rgba(255,225,0,0.4);
+    position: relative;
+    right: 70px;
 }
 
 .padded-row {
@@ -185,6 +197,17 @@ div.name h4 {
     border: 1px dotted grey;
 }
 
+#teamReport{
+    background-color: white;
+    width: 2500px;
+    height: 3300px;
+}
+
+.leftPosition {
+    position: relative;
+    left: -300px;
+}
+
 html {
     height: 100%
 }
@@ -245,16 +268,10 @@ padding-bottom: 50px;
 }
 
 .column-count-2 {
-    //left: 24px !important;
-    //width: 80% !important;
     display:inline-block;
     column-count: 2;
-    text-align: center;
-    padding: 1px;
+    column-gap: 2em;
     line-height: 1;
-}
-.column-count-2 h4 {
- //   font-size: 15px;
 }
 
 h4 {
@@ -279,3 +296,10 @@ h4 {
   padding-left: 75px;
 }
 
+.small-5 {
+    width: 43%;
+}
+
+.small-2 {
+    width: 14%;
+}

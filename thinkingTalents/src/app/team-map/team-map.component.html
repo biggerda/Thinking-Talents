@@ -58,6 +58,7 @@
 
     <button class="button alert" (click)="startOver()" [disabled]="!team.players.length > 0 ">New Team Map</button>
     <button class="button secondary" (click)="editTeamMap()">Edit Team Map</button>
+    <button class="button" (click)="printReport()">Print Team Report</button>
     <button class="button" (click)="print()">Print Team Map</button>
 
   </div>
@@ -101,19 +102,19 @@
 
     <div class="row">
       <div class="columns small-4 puzzle">
-        <h5>Organizing</h5>
+        <h5 class="talentHeading">Organizing</h5>
         <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
-        <div class="name" *ngIf="isChecked('Organizing')" [ngClass]="{'column-count-2': getNames('Organizing').length > 5}">
+        <div class="name" *ngIf="isChecked('Organizing')" [ngClass]="{'column-count-2': getNames('Organizing').length > 7}">
           <h4 *ngFor="let name of getNames('Organizing')" class="text-archivo margin-bottom-0" [ngClass]="{'stuffed': isStuffed()}">{{name}}</h4>
         </div>
       </div>
 
       <div class="columns small-4 end puzzle">
-        <h5>Achieving</h5>
+        <h5 class="ttheading">Achieving</h5>
         <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
-        <div class="name" *ngIf="isChecked('Achieving')" [ngClass]="{'column-count-2': getNames('Achieving').length > 5}">
+        <div class="name" *ngIf="isChecked('Achieving')" [ngClass]="{'column-count-2': getNames('Achieving').length > 7}">
           <h4 *ngFor="let name of getNames('Achieving')" class="text-archivo margin-bottom-0" [ngClass]="{'stuffed': isStuffed()}">{{name}}</h4>
         </div>
       </div>
@@ -126,10 +127,10 @@
 
 
       <div class="columns small-4 end puzzle">
-        <h5>Fixing It</h5>
+        <h5 class="ttheading">Fixing It</h5>
         <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
-        <div class="name" *ngIf="isChecked('Fixing It')" [ngClass]="{'column-count-2': getNames('Fixing It').length > 5}">
+        <div class="name" *ngIf="isChecked('Fixing It')" [ngClass]="{'column-count-2': getNames('Fixing It').length > 9}">
           <h4 *ngFor="let name of getNames('Fixing It')" class="text-archivo margin-bottom-0" [ngClass]="{'stuffed': isStuffed()}">{{name}}</h4>
         </div>
       </div>
@@ -137,7 +138,7 @@
 
     <div class="row">
       <div class="columns small-4 puzzle">
-        <h5>Collecting</h5>
+        <h5 class="ttheading">Collecting</h5>
         <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
         <div class="name" *ngIf="isChecked('Collecting')" [ngClass]="{'column-count-2': getNames('Collecting').length > 5}">
@@ -147,7 +148,7 @@
       </div>
 
       <div class="columns small-4 end puzzle">
-        <h5>Thinking Logically</h5>
+        <h5 class="ttheading">Thinking Logically</h5>
         <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
         <div class="name" *ngIf="isChecked('Thinking Logically')" [ngClass]="{'column-count-2': getNames('Thinking Logically').length > 5}">
@@ -162,7 +163,7 @@
   <!--Central Traits-->
   <div class="columns small-2 central-border-top">
     <div class="columns small-12 puzzle">
-      <h5>Goal Setting</h5>
+      <h5 class="ttheading">Goal Setting</h5>
       <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
       <div class="name" *ngIf="isChecked('Goal Setting')" [ngClass]="{'column-count-2': getNames('Goal Setting').length > 5}">
@@ -172,7 +173,7 @@
     </div>
 
     <div class="columns small-12 margin-top-15 puzzle" id="special-spacing">
-      <h5>Competing</h5>
+      <h5 class="ttheading">Competing</h5>
       <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
       <div class="name" *ngIf="isChecked('Competing')" [ngClass]="{'column-count-2': getNames('Competing').length > 5}">
@@ -187,7 +188,7 @@
 
     <div class="row full-width-rowc">
       <div class="columns small-4 puzzle">
-        <h5>Thinking Forward</h5>
+        <h5 class="ttheading">Thinking Forward</h5>
         <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
         <div class="name" *ngIf="isChecked('Thinking Forward')" [ngClass]="{'column-count-2': getNames('Thinking Forward').length > 5}">
@@ -196,7 +197,7 @@
       </div>
 
       <div class="columns small-4 puzzle">
-        <h5>Standing Out</h5>
+        <h5 class="ttheading">Standing Out</h5>
         <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
         <div class="name" *ngIf="isChecked('Standing Out')" [ngClass]="{'column-count-2': getNames('Standing Out').length > 5}">
@@ -206,7 +207,7 @@
       </div>
 
       <div class="columns small-4 puzzle">
-        <h5>Loving Ideas</h5>
+        <h5 class="ttheading">Loving Ideas</h5>
         <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
         <div class="name" *ngIf="isChecked('Loving Ideas')" [ngClass]="{'column-count-2': getNames('Loving Ideas').length > 5}">
@@ -218,7 +219,7 @@
 
     <div class="row">
       <div class="columns small-4 small-offset-2 puzzle">
-        <h5>Adapting</h5>
+        <h5 class="ttheading">Adapting</h5>
         <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
         <div class="name" *ngIf="isChecked('Adapting')" [ngClass]="{'column-count-2': getNames('Adapting').length > 5}">
@@ -228,7 +229,7 @@
 
 
       <div class="columns small-4 end puzzle">
-        <h5>Innovating</h5>
+        <h5 class="ttheading">Innovating</h5>
         <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
         <div class="name" *ngIf="isChecked('Innovating')" [ngClass]="{'column-count-2': getNames('Innovating').length > 5}">
@@ -239,7 +240,7 @@
 
     <div class="row">
       <div class="columns small-4 puzzle">
-        <h5>Strategizing</h5>
+        <h5 class="ttheading">Strategizing</h5>
         <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
         <div class="name" *ngIf="isChecked('Strategizing')" [ngClass]="{'column-count-2': getNames('Strategizing').length > 5}">
@@ -248,7 +249,7 @@
       </div>
 
       <div class="columns small-4 end puzzle">
-        <h5>Love of Learning</h5>
+        <h5 class="ttheading">Love of Learning</h5>
         <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
         <div class="name" *ngIf="isChecked('Love of Learning')" [ngClass]="{'column-count-2': getNames('Love of Learning').length > 5}">
@@ -269,7 +270,7 @@
     <div class="row central-border-sides">
 
       <div class="columns small-4 puzzle">
-        <h5>Focusing</h5>
+        <h5 class="ttheading">Focusing</h5>
         <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
         <div class="name" *ngIf="isChecked('Focusing')" [ngClass]="{'column-count-2': getNames('Focusing').length > 5}">
@@ -279,7 +280,7 @@
       </div>
 
       <div class="columns small-4 puzzle">
-        <h5>Equalizing</h5>
+        <h5 class="ttheading">Equalizing</h5>
         <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
         <div class="name" *ngIf="isChecked('Equalizing')" [ngClass]="{'column-count-2': getNames('Equalizing').length > 5}">
@@ -289,7 +290,7 @@
       </div>
 
       <div class="columns small-4 down-some puzzle">
-        <h5>Reliability </h5>
+        <h5 class="ttheading">Reliability </h5>
         <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
         <div class="name" *ngIf="isChecked('Reliability')" [ngClass]="{'column-count-2': getNames('Reliability').length > 5}">
@@ -302,7 +303,7 @@
 
     <div class="row padded-row">
       <div class="columns small-4 puzzle">
-        <h5>Taking Charge</h5>
+        <h5 class="ttheading">Taking Charge</h5>
         <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
         <div class="name" *ngIf="isChecked('Taking Charge')" [ngClass]="{'column-count-2': getNames('Taking Charge').length > 5}">
@@ -312,7 +313,7 @@
 
       </div>
       <div class="columns small-4 puzzle">
-        <h5>Making It Happen</h5>
+        <h5 class="ttheading">Making It Happen</h5>
         <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
         <div class="name" *ngIf="isChecked('Making It Happen')" [ngClass]="{'column-count-2': getNames('Making It Happen').length > 5}">
@@ -321,7 +322,7 @@
       </div>
 
       <div class="columns small-4 down-some puzzle">
-        <h5>Thinking Back</h5>
+        <h5 class="ttheading">Thinking Back</h5>
         <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
         <div class="name" *ngIf="isChecked('Thinking Back')" [ngClass]="{'column-count-2': getNames('Thinking Back').length > 5}">
@@ -333,7 +334,7 @@
 
     <div class="row padded-row">
       <div class="columns small-4 puzzle">
-        <h5>Perfecting</h5>
+        <h5 class="ttheading">Perfecting</h5>
         <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
         <div class="name" *ngIf="isChecked('Perfecting')" [ngClass]="{'column-count-2': getNames('Perfecting').length > 4}">
@@ -342,7 +343,7 @@
       </div>
 
       <div class="columns small-4 end puzzle">
-        <h5>Having Confidence</h5>
+        <h5 class="ttheading">Having Confidence</h5>
         <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
         <div class="name" *ngIf="isChecked('Having Confidence')" [ngClass]="{'column-count-2': getNames('Having Confidence').length > 4}">
@@ -356,7 +357,7 @@
   <!--Central Traits Row 2-->
   <div class="columns small-2 central-border-bottom">
     <div class="columns small-12 ta-spacing puzzle">
-      <h5>Thinking Alone</h5>
+      <h5 class="ttheading">Thinking Alone</h5>
       <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
       <div class="name" *ngIf="isChecked('Thinking Alone')" [ngClass]="{'column-count-2': getNames('Thinking Alone').length > 5}">
@@ -365,7 +366,7 @@
     </div>
 
     <div class="columns small-12 j-spacing margin-bottom-15 puzzle">
-      <h5>Joking</h5>
+      <h5 class="ttheading">Joking</h5>
       <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
       <div class="name" *ngIf="isChecked('Joking')" [ngClass]="{'column-count-2': getNames('Joking').length > 5}">
@@ -380,7 +381,7 @@
 
     <div class="row">
       <div class="columns small-3 puzzle">
-        <h5>Optimism</h5>
+        <h5 class="ttheading">Optimism</h5>
         <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
         <div class="name" *ngIf="isChecked('Optimism')" [ngClass]="{'column-count-2': getNames('Optimism').length > 5}">
@@ -389,7 +390,7 @@
       </div>
 
       <div class="columns small-3 puzzle">
-        <h5>Mentoring</h5>
+        <h5 class="ttheading">Mentoring</h5>
         <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
         <div class="name" *ngIf="isChecked('Mentoring')" [ngClass]="{'column-count-2': getNames('Mentoring').length > 5}">
@@ -398,7 +399,7 @@
       </div>
 
       <div class="columns small-3 puzzle">
-        <h5>Peace-making</h5>
+        <h5 class="ttheading">Peace-making</h5>
         <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
         <div class="name" *ngIf="isChecked('Peace-making')" [ngClass]="{'column-count-2': getNames('Peace-making').length > 5}">
@@ -407,7 +408,7 @@
       </div>
 
       <div class="columns small-3 down-some puzzle">
-        <h5>Individuality</h5>
+        <h5 class="ttheading">Individuality</h5>
         <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
         <div class="name" *ngIf="isChecked('Individuality')" [ngClass]="{'column-count-2': getNames('Individuality').length > 5}">
@@ -418,7 +419,7 @@
 
    <div class="row padded-row">
       <div class="columns small-3 puzzle">
-        <h5>Including</h5>
+        <h5 class="ttheading">Including</h5>
         <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
         <div class="name" *ngIf="isChecked('Including')" [ngClass]="{'column-count-2': getNames('Including').length > 5}">
@@ -427,7 +428,7 @@
       </div>
 
       <div class="columns small-3 puzzle">
-        <h5>Enrolling</h5>
+        <h5 class="ttheading">Enrolling</h5>
         <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
         <div class="name" *ngIf="isChecked('Enrolling')" [ngClass]="{'column-count-2': getNames('Enrolling').length > 5}">
@@ -436,7 +437,7 @@
       </div>
 
       <div class="columns small-3 puzzle">
-        <h5>Creating Intimacy</h5>
+        <h5 class="ttheading">Creating Intimacy</h5>
         <img width="105" src="../../assets/img/puzzle-icon-empty.png" />
 
         <div class="name" *ngIf="isChecked('Creating Intimacy')" [ngClass]="{'column-count-2': getNames('Creating Intimacy').length > 5}">
@@ -445,18 +446,18 @@
       </div>
 
       <div class="columns small-3 down-some puzzle">
-        <h5>Storytelling</h5>
-        <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
+        <h5 class="ttheading">Feeling For Others</h5>
+        <img width="105" src="../../assets/img/puzzle-icon-empty.png" />
 
-        <div class="name" *ngIf="isChecked('Storytelling')" [ngClass]="{'column-count-2': getNames('Storytelling').length > 5}">
-          <h4 *ngFor="let name of getNames('Storytelling')" class="text-archivo margin-bottom-0" [ngClass]="{'stuffed': isStuffed()}">{{name}}</h4>
+        <div class="name" *ngIf="isChecked('Feeling For Others')" [ngClass]="{'column-count-2': getNames('Feeling For Others').length > 4}">
+          <h4 *ngFor="let name of getNames('Feeling For Others')" class="text-archivo margin-bottom-0" [ngClass]="{'stuffed': isStuffed()}">{{name}}</h4>
         </div>
       </div>
     </div>
 
    <div class="row padded-row">
       <div class="columns small-3 puzzle">
-        <h5>Connecting</h5>
+        <h5 class="ttheading">Connecting</h5>
         <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
         <div class="name" *ngIf="isChecked('Connecting')" [ngClass]="{'column-count-2': getNames('Connecting').length > 5}">
@@ -465,7 +466,7 @@
       </div>
 
       <div class="columns small-3 puzzle">
-        <h5>Believing</h5>
+        <h5 class="ttheading">Believing</h5>
         <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
         <div class="name" *ngIf="isChecked('Believing')" [ngClass]="{'column-count-2': getNames('Believing').length > 4}">
@@ -474,11 +475,11 @@
       </div>
 
       <div class="columns small-3 end puzzle">
-        <h5>Feeling For Others</h5>
-        <img width="105" src="../../assets/img/puzzle-icon-empty.png" />
+        <h5 class="ttheading">Storytelling</h5>
+        <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
-        <div class="name" *ngIf="isChecked('Feeling For Others')" [ngClass]="{'column-count-2': getNames('Feeling For Others').length > 4}">
-          <h4 *ngFor="let name of getNames('Feeling For Others')" class="text-archivo margin-bottom-0" [ngClass]="{'stuffed': isStuffed()}">{{name}}</h4>
+        <div class="name" *ngIf="isChecked('Storytelling')" [ngClass]="{'column-count-2': getNames('Storytelling').length > 5}">
+          <h4 *ngFor="let name of getNames('Storytelling')" class="text-archivo margin-bottom-0" [ngClass]="{'stuffed': isStuffed()}">{{name}}</h4>
         </div>
       </div>
     </div>
@@ -512,7 +513,8 @@
 </div>
 </div>
 
-  <div class="row" *ngIf="team.players.length > 0">
+<div id="teamReport">
+  <div class="row leftPosition" *ngIf="team.players.length > 0">
     <div class="large-12 columns">
       <label><h3>Players ({{this.team.players.length}})</h3>
         </label>
@@ -520,7 +522,7 @@
   </div>
 
 
-    <div class="row" *ngFor="let player of team.players; let i = index;">
+    <div class="row leftPosition" *ngFor="let player of team.players; let i = index;">
       <div class="large-12 columns" class="report">
         <img src="../../assets/img/torsoIcon.png">
 
@@ -558,10 +560,10 @@
       </div>
     </div>
 
-    <br><br>
+    <br>
 
 
-    <div class="row" *ngIf="team.teamblindspots.length > 0">
+    <div class="row leftPosition" *ngIf="team.teamblindspots.length > 0">
       <div class="large-12 columns">
         <label><h3>Team Blindspots ({{team.teamblindspots.length}})</h3>
           </label>
@@ -569,7 +571,7 @@
     </div>
   
     
-    <div class="row" *ngFor="let tbspot of team.teamblindspots; let i = index;">
+    <div class="row leftPosition" *ngFor="let tbspot of team.teamblindspots; let i = index;">
       <div class="large-12 columns" class="report">
         <img src="../../assets/img/blindicon.png">
         <span>Blind Spot:<strong> {{tbspot}} </strong></span>
@@ -658,7 +660,7 @@
 
       </div>
     </div>
-
+  </div>
     <br><br><br><br><br><br><br>
 </div>
 
