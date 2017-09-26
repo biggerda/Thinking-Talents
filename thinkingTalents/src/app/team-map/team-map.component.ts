@@ -124,6 +124,7 @@ export class TeamMapComponent implements OnInit {
 
     this.mode = "create";
 
+    this.team.teampreferences = [];
     this.team.teamblindspots = [];
 
   }
@@ -180,6 +181,7 @@ export class TeamMapComponent implements OnInit {
       else if( (player.i_talents > player.a_talents) && (player.i_talents > player.r_talents) && (player.i_talents > player.p_talents) ) player.talentPref = "Innovative";
       else {}
 
+      if( this.team.teampreferences.indexOf( player.talentPref ) === -1) this.team.teampreferences.push( player.talentPref );
 
       //Decision Tree for Blind Spot
       if( player.a_talents > 0 && player.i_talents > 0 && player.r_talents > 0 && player.p_talents > 0 ) player.blindspot = "None (Whole-Brained)";
@@ -267,6 +269,10 @@ export class TeamMapComponent implements OnInit {
 
   }
 
+  getTeamNum() : number {
+    return this.team.players.length;
+  }
+
   editTeamMap(){
 
     this.mapSkills.forEach((skill) => {
@@ -287,7 +293,7 @@ export class TeamMapComponent implements OnInit {
   }
 
   print() {
-
+    //NO LONGER IN USE
     html2canvas(jquery("#teamMap")[0], {
       dpi: 192,
       letterRendering: true,
@@ -314,7 +320,8 @@ export class TeamMapComponent implements OnInit {
 
   printReport() {
     
-        html2canvas(jquery("#teamReport")[0], {
+    //print thinking talents report
+        html2canvas(jquery("#ttrpt-wrapper")[0], {
           dpi: 192,
           letterRendering: true,
           allowTaint: true,
@@ -336,10 +343,41 @@ export class TeamMapComponent implements OnInit {
             //img.download = "YOUR_TEAM_MAP.jpg";
     
         });
-      }
+  }
+
+ 
+  printBsReport() {
+    
+    //print thinking talents report
+        html2canvas(jquery("#bsrpt-wrapper")[0], {
+          dpi: 192,
+          letterRendering: true,
+          allowTaint: true,
+          //proxy: "http://localhost:4200",
+          logging: true,
+        }).then((canvas) => {
+    
+            //JSPDF implementation
+            //this.doc = new jsPDF('landscape', 'pt','legal');
+            //this.doc.text(10, 10, "hello!");
+            //this.doc.addImage(img, 'JPEG', 0, 0, 1008, 612);
+            //this.doc.save('sample.pdf');
+            //this.doc.output("dataurlnewwindow");
+    
+            var bsrpt = canvas.toDataURL('image/jpeg');
+            window.open(bsrpt);
+    
+            //img.href = canvas.replace("image/jpeg", "image/octet-stream");
+            //img.download = "YOUR_TEAM_MAP.jpg";
+    
+        });
+  }
+      
+      
 
 
 }
+
 interface skill {
   name: string;
   description: string;
@@ -372,5 +410,4 @@ interface team {
   team_name?: string;
   teampreferences?: Array<string>;
   teamblindspots?: Array<string>;
-  a_blindspots_names?: string;
 }
