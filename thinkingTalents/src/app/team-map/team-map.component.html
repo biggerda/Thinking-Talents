@@ -576,7 +576,7 @@
 <!--THINKING TALENTS REPORT 2-->
 <div id="ttrpt-wrapper">
 
-  <div class="teamReport">
+  <div class="teamReport" [ngClass]="{'downsize-rpt': team.teampreferences.length > 10 }">
 
     <div>
         <h2 class="rpt-title">Thinking Talents Report</h2>
@@ -676,7 +676,7 @@
   <!--BLIND SPOTS REPORT-->
   <div id="bsrpt-wrapper">
     
-    <div class="teamReport">
+    <div class="teamReport"  [ngClass]="{'downsize-rpt': team.teamblindspots.length > 10 }">
   
       <div>
           <h2 class="rpt-title">Blind Spots Report</h2>
