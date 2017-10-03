@@ -293,7 +293,6 @@ export class TeamMapComponent implements OnInit {
   }
 
   print() {
-    //NO LONGER IN USE
     html2canvas(jquery("#teamMap")[0], {
       dpi: 192,
       letterRendering: true,
