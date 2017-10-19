@@ -164,17 +164,17 @@ export class TeamMapComponent implements OnInit {
 
 
       //Decision Tree for Brain Preference
-      if( (player.a_talents == player.p_talents) && (player.r_talents && player.i_talents) && (player.a_talents == player.i_talents)) player.talentPref = "Whole-Brained";
-      else if( (player.p_talents == (player.r_talents && player.i_talents) && (player.p_talents > player.a_talents)) ) player.talentPref = "Limbic (R/P) / Right-Brained";
-      else if( (player.a_talents == (player.i_talents && player.r_talents) && (player.a_talents > player.p_talents)) ) player.talentPref = "Cerebral (A/I) / Right-Brained";
-      else if( (player.a_talents == (player.i_talents && player.p_talents) && (player.a_talents > player.r_talents)) ) player.talentPref = "Cerebral (A/I) / Left-Brained";
-      else if( (player.a_talents == (player.p_talents && player.r_talents) && (player.a_talents > player.i_talents)) ) player.talentPref = "Limbic (R/P) / Left-Brained";
-      else if( (player.a_talents == player.i_talents) && (player.a_talents > (player.p_talents && player.r_talents)) ) player.talentPref = "Cerebral (A/I)";
-      else if( (player.a_talents == player.p_talents) && (player.a_talents > (player.i_talents && player.r_talents)) ) player.talentPref = "Left-Brained";
-      else if( (player.p_talents == player.r_talents) && (player.p_talents > (player.a_talents && player.i_talents)) ) player.talentPref = "Limbic (R/P)";
-      else if( (player.r_talents == player.i_talents) && (player.r_talents > (player.a_talents && player.p_talents)) ) player.talentPref = "Right-Brained";
-      else if( (player.a_talents == player.r_talents) && (player.a_talents > (player.i_talents && player.p_talents)) ) player.talentPref = "Facts vs. Feelings (A/R)";
-      else if( (player.i_talents == player.p_talents) && (player.i_talents > (player.a_talents && player.r_talents)) ) player.talentPref = "Entrepreneur (I/P)";
+      if( (player.a_talents > 0) && (player.p_talents > 0) && (player.r_talents > 0) && (player.i_talents > 0)) player.talentPref = "Whole-Brained";
+      else if( (player.p_talents == player.r_talents) && (player.p_talents == player.i_talents) && (player.p_talents > player.a_talents) ) player.talentPref = "Limbic (R/P) / Right-Brained";
+      else if( (player.a_talents == player.i_talents) && (player.a_talents == player.r_talents) && (player.a_talents > player.p_talents) ) player.talentPref = "Cerebral (A/I) / Right-Brained";
+      else if( (player.a_talents == player.i_talents) && (player.a_talents == player.p_talents) && (player.a_talents > player.r_talents) ) player.talentPref = "Cerebral (A/I) / Left-Brained";
+      else if( (player.a_talents == player.p_talents) && (player.a_talents == player.r_talents) && (player.a_talents > player.i_talents) ) player.talentPref = "Limbic (R/P) / Left-Brained";
+      else if( (player.a_talents == player.i_talents) && (player.a_talents > player.p_talents) && (player.a_talents > player.r_talents) ) player.talentPref = "Cerebral (A/I)";
+      else if( (player.a_talents == player.p_talents) && (player.a_talents > player.i_talents) && (player.a_talents > player.r_talents) ) player.talentPref = "Left-Brained";
+      else if( (player.p_talents == player.r_talents) && (player.p_talents > player.a_talents) && (player.p_talents > player.i_talents) ) player.talentPref = "Limbic (R/P)";
+      else if( (player.r_talents == player.i_talents) && (player.r_talents > player.a_talents) && (player.r_talents > player.p_talents) ) player.talentPref = "Right-Brained";
+      else if( (player.a_talents == player.r_talents) && (player.a_talents > player.i_talents) && (player.a_talents > player.p_talents) ) player.talentPref = "Facts vs. Feelings (A/R)";
+      else if( (player.i_talents == player.p_talents) && (player.i_talents > player.a_talents) && (player.i_talents > player.r_talents) ) player.talentPref = "Entrepreneur (I/P)";
       else if( (player.a_talents > player.p_talents) && (player.a_talents > player.r_talents) && (player.a_talents > player.i_talents) ) player.talentPref = "Analytical";
       else if( (player.p_talents > player.a_talents) && (player.p_talents > player.r_talents) && (player.p_talents > player.i_talents) ) player.talentPref = "Procedural";
       else if( (player.r_talents > player.a_talents) && (player.r_talents > player.p_talents) && (player.r_talents > player.i_talents) ) player.talentPref = "Relational";
@@ -293,6 +293,7 @@ export class TeamMapComponent implements OnInit {
   }
 
   print() {
+    //NO LONGER IN USE
     html2canvas(jquery("#teamMap")[0], {
       dpi: 192,
       letterRendering: true,
@@ -401,6 +402,7 @@ interface player {
   i_talents?: number;
   talentPref?: string;
   blindspot?: string;
+  wb?: boolean;
 }
 
 interface team {
