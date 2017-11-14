@@ -374,7 +374,7 @@
       <h5 class="ttheading">Joking</h5>
       <img width="105" src="../../assets/img/puzzle-icon-empty.png"/>
 
-      <div class="name" *ngIf="isChecked('Joking')" [ngClass]="{'column-count-2': getNames('Joking').length > 6}">
+      <div class="name" *ngIf="isChecked('Joking')" [ngClass]="{'column-count-2': getNames('Joking').length > 7}">
         <h4 *ngFor="let name of getNames('Joking')" class="text-archivo margin-bottom-0" [ngClass]="{'stuffed': isStuffed()}">{{name}}</h4>
       </div>
 
@@ -710,14 +710,12 @@
             <li *ngIf="tbspot == 'None (Whole-Brained)'" >Starting a Podcast<br></li>
             <li *ngIf="tbspot == 'None (Whole-Brained)'" >Starting a Non-For-Profit Organization<br></li>
 
-            <li *ngIf="tbspot == 'Analytical'" >Convert Your Retirement Dreams Into A Quantitative Formula<br></li>
-            <li *ngIf="tbspot == 'Analytical'" >Play Devil's Advocate<br></li>
+            <li *ngIf="tbspot == 'Analytical'" >Watch Ted Talks<br></li>
             <li *ngIf="tbspot == 'Analytical'" >Take Apart A Frequently Used Machine and Put It Back Together<br></li>
             <li *ngIf="tbspot == 'Analytical'" >Play More Brain Games Like Sudoku, Chess, Escape Rooms<br></li>
             <li *ngIf="tbspot == 'Analytical'" >Read More Books While Practicing Active Reading<br></li>
             
-            <li *ngIf="tbspot == 'Procedural'" >Tennis|Ping Pong<br></li>
-            <li *ngIf="tbspot == 'Procedural'" >Bowling<br></li>
+            <li *ngIf="tbspot == 'Procedural'" >Learn Something New, Followed By Exercise<br></li>
             <li *ngIf="tbspot == 'Procedural'" >Assemble Furniture By The Instructions<br></li>
             <li *ngIf="tbspot == 'Procedural'" >Prepare A Family Tree<br></li>
             <li *ngIf="tbspot == 'Procedural'" >Learn A Line Dance (Cha Cha Slide)<br></li>
@@ -735,7 +733,8 @@
           
             <li *ngIf="tbspot == 'Cerebral (A/I)'" >Learn To Play An Instrument<br></li>
             <li *ngIf="tbspot == 'Cerebral (A/I)'" >Wine Tasting<br></li>
-            <li *ngIf="tbspot == 'Cerebral (A/I)'" >Allow Yourself to Daydream For 15 Minutes Before Getting Out Of Bed<br></li>    
+            <li *ngIf="tbspot == 'Cerebral (A/I)'" >Allow Yourself to Daydream For 15 Minutes Before Getting Out Of Bed<br></li>
+            <li *ngIf="tbspot == 'Cerebral (A/I)'" >Examine or Read About Worldviews From Perspectives Outside Of Your Own<br></li>
 
             <li *ngIf="tbspot == 'Limbic (R/P)'" >Gardening<br></li>
             <li *ngIf="tbspot == 'Limbic (R/P)'" >Listen To The Instrumental Version of Your Favorite Album<br></li>
