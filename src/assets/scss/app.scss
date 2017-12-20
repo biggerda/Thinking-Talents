@@ -2,7 +2,7 @@
 
 @import 'settings';
 @import "~foundation-sites/assets/foundation";
-//@import './node_modules/motion-ui/motion-ui';
+@import './node_modules/motion-ui/motion-ui';
 @import './node_modules/foundation-sites/scss/components/top-bar';
 
 @include foundation-global-styles;
