@@ -30,7 +30,6 @@
     "@angular/router": "^4.0.0",
     "core-js": "^2.4.1",
     "express": "^4.16.2",
-    //"foundation-sites": "^6.3.1",
     "foundation-sites": "~6.1.2",
     "motion-ui": "~1.1.0",
     "html2canvas": "https://github.com/eKoopmans/html2canvas/tarball/develop/",
