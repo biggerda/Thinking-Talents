@@ -17,7 +17,7 @@
       <input type="text" placeholder="Michael Jordan" [(ngModel)]="currentPlayer.name" />
 
       <button class="button success" (click)="addTeamMember()" [disabled]="mode == 'edit' ">Add Team Member</button>
-      <button class="button" (click)="updateMember()" [disabled]="mode == 'create' ">Update Team Member</button>
+      <button class="button" (click)="updateMember(currentPlayer)" [disabled]="mode == 'create' ">Update Team Member</button>
       <button class="button secondary" (click)="clear(currentPlayer)" [disabled]="mode == 'create' ">Clear</button>
       <button class="button alert" (click)="removeMember(currentPlayer)" [disabled]="mode !== 'edit' ">Remove Team Member</button>
       <button class="button alert" (click)="startOver()" [disabled]="!team.players.length > 0 ">New Team Map</button>
@@ -55,7 +55,7 @@
 <div *ngIf="mode == 'displayTeamMap'">
 
   <div class="row">
-        <h3>Previews of the map and reports can be seen below. Click on the buttons below to create an image of the object in a new tab. Right-click and <em>Save Image As</em>.</h3>        
+        <h3>Previews of the map and reports can be seen below. Click on the buttons below to create an image of the object in a new tab. Right-click and <em>Save Image As</em>.</h3>
   </div>
 
   <div class="row">
@@ -520,7 +520,7 @@
 
 <!--THINKING TALENTS REPORT 1-->
 <div id="rpt-wrapper">
-  
+
   <div class="teamReport">
 
     <div class="row leftPosition" *ngIf="team.players.length > 0">
@@ -543,7 +543,7 @@
             <span [ngClass]="{'red': player.p_talents == 0}">Procedural = {{player.p_talents}}</span>
 
             <br>
-            
+
             <!-- Prints Blindspots for each Player -->
             <ul class="scoot">
               <li>
@@ -557,7 +557,7 @@
                   <span *ngIf="(player.talentPref == 'Right-Brained')"> (Intuitive)</span>
                 </strong>
               </li>
-            
+
             <!-- Prints Blindspots for each Player -->
               <li>
                 <span>Blind Spot: </span>
@@ -571,8 +571,8 @@
     </div>
   </div>
 
-  <br><br><br>  
-  
+  <br><br><br>
+
 <!--THINKING TALENTS REPORT 2-->
 <div id="ttrpt-wrapper">
 
@@ -590,7 +590,7 @@
       </div>
     </div>
 
-    
+
     <div class="row leftPosition" *ngFor="let ttalent of team.teampreferences; let i = index;">
       <div class="large-12 columns" class="report">
         <img src="../../assets/img/torsoIcon.png">
@@ -607,26 +607,26 @@
           <li *ngIf="ttalent == 'Whole-Brained'" >Keywords: Communicator, Diverse, Balanced<br></li>
           <li *ngIf="ttalent == 'Whole-Brained'" >Build bridges between functions, generations, levels, and any other disconnects<br></li>
 
-          <li *ngIf="ttalent == 'Analytical'" ><strong>Rational Thinkers</strong> - Concerned with facts, logic, statistics, data and references<br></li> 
-          <li *ngIf="ttalent == 'Analytical'" >Keywords: Academic, Realistic, Critical, Precise, Directive<br></li> 
-          <li *ngIf="ttalent == 'Analytical'" >Uses Rationale for listening, making decisions, and problem-solving<br></li> 
-          
+          <li *ngIf="ttalent == 'Analytical'" ><strong>Rational Thinkers</strong> - Concerned with facts, logic, statistics, data and references<br></li>
+          <li *ngIf="ttalent == 'Analytical'" >Keywords: Academic, Realistic, Critical, Precise, Directive<br></li>
+          <li *ngIf="ttalent == 'Analytical'" >Uses Rationale for listening, making decisions, and problem-solving<br></li>
+
           <li *ngIf="ttalent == 'Procedural'" ><strong>Methodical Thinkers</strong> - Focused on details, reliability and history<br></li>
           <li *ngIf="ttalent == 'Procedural'" >Keywords: Reliable, Strict, Task-driven, Safekeeping, Consistent<br></li>
           <li *ngIf="ttalent == 'Procedural'" >Uses organization, order, and reflection for decision-making<br></li>
 
-          <li *ngIf="ttalent == 'Relational'" ><strong>Interpersonal Thinkers</strong> - Focused on feelings, emotional connections<br></li>        
-          <li *ngIf="ttalent == 'Relational'" >Keywords: Supportive, Expressive, Value-Oriented, Cooperative, Nurturing, Spiritual, Musical<br></li>        
-          <li *ngIf="ttalent == 'Relational'" >Makes decisions based on feelings, relationships, and the group’s interests<br></li>        
+          <li *ngIf="ttalent == 'Relational'" ><strong>Interpersonal Thinkers</strong> - Focused on feelings, emotional connections<br></li>
+          <li *ngIf="ttalent == 'Relational'" >Keywords: Supportive, Expressive, Value-Oriented, Cooperative, Nurturing, Spiritual, Musical<br></li>
+          <li *ngIf="ttalent == 'Relational'" >Makes decisions based on feelings, relationships, and the group’s interests<br></li>
 
-          <li *ngIf="ttalent == 'Innovative'" ><strong>Experimental Thinkers</strong> - Focused on concepts, creativity and imagination<br></li>  
-          <li *ngIf="ttalent == 'Innovative'" >Keywords: Experimental, Futuristic, Inventive, Flexible, Impulsive, Rule Bender, Free-Spirited, Unplanned<br></li>  
-          <li *ngIf="ttalent == 'Innovative'" >Decision-making is based on possibilities<br></li>  
-        
-          <li *ngIf="ttalent == 'Cerebral (A/I)'" ><strong>Intellectual Thinkers</strong> - Focused on understanding with regard to abstract matters<br></li> 
-          <li *ngIf="ttalent == 'Cerebral (A/I)'" >Keywords: Thinker, Wise, Abstract Reasoning and Unstanding<br></li> 
-          <li *ngIf="ttalent == 'Cerebral (A/I)'" >Uses critical thinking to make decisions<br></li> 
-          
+          <li *ngIf="ttalent == 'Innovative'" ><strong>Experimental Thinkers</strong> - Focused on concepts, creativity and imagination<br></li>
+          <li *ngIf="ttalent == 'Innovative'" >Keywords: Experimental, Futuristic, Inventive, Flexible, Impulsive, Rule Bender, Free-Spirited, Unplanned<br></li>
+          <li *ngIf="ttalent == 'Innovative'" >Decision-making is based on possibilities<br></li>
+
+          <li *ngIf="ttalent == 'Cerebral (A/I)'" ><strong>Intellectual Thinkers</strong> - Focused on understanding with regard to abstract matters<br></li>
+          <li *ngIf="ttalent == 'Cerebral (A/I)'" >Keywords: Thinker, Wise, Abstract Reasoning and Unstanding<br></li>
+          <li *ngIf="ttalent == 'Cerebral (A/I)'" >Uses critical thinking to make decisions<br></li>
+
           <li *ngIf="ttalent == 'Limbic (R/P)'" ><strong>Instinctual Thinkers</strong> - Focused on what feels natural<br></li>
           <li *ngIf="ttalent == 'Limbic (R/P)'" >Keywords: Emotional, Dreamer, Instinctive, “Feeler”<br></li>
           <li *ngIf="ttalent == 'Limbic (R/P)'" >Uses past experiences and relationships to make “gut-decisions” <br></li>
@@ -635,10 +635,10 @@
           <li *ngIf="ttalent == 'Left-Brained'" >Keywords: Learner, Sequencial, Rigid<br></li>
           <li *ngIf="ttalent == 'Left-Brained'" >Problem solving in systemic fashion using literal meanings and facts<br></li>
 
-          <li *ngIf="ttalent == 'Right-Brained'" ><strong>Intuitive Thinkers</strong> - Focused on what feels true, even without conscious reasoning<br></li>   
-          <li *ngIf="ttalent == 'Right-Brained'" >Keywords: Creative, Passionate, Free-Spirited, Intuitive, Imaginative, Daydreamer<br></li> 
-          <li *ngIf="ttalent == 'Right-Brained'" >Uses visual cues, nonverbal cues, and imagination to make decisions<br></li> 
-          
+          <li *ngIf="ttalent == 'Right-Brained'" ><strong>Intuitive Thinkers</strong> - Focused on what feels true, even without conscious reasoning<br></li>
+          <li *ngIf="ttalent == 'Right-Brained'" >Keywords: Creative, Passionate, Free-Spirited, Intuitive, Imaginative, Daydreamer<br></li>
+          <li *ngIf="ttalent == 'Right-Brained'" >Uses visual cues, nonverbal cues, and imagination to make decisions<br></li>
+
           <li *ngIf="ttalent == 'Facts vs. Feelings (A/R)'" ><strong>Facts vs. Feelings</strong> - Use feelings with facts to rationalize<br></li>
           <li *ngIf="ttalent == 'Facts vs. Feelings (A/R)'" >Keywords: Objective, Direct, Sensitive, People-pleasing, Diplomatic<br></li>
           <li *ngIf="ttalent == 'Facts vs. Feelings (A/R)'" >Weighs between logic and emotions to make decisions<br></li>
@@ -647,7 +647,7 @@
           <li *ngIf="ttalent == 'Entrepreneur (I/P)'" ><strong>Entrepreneurial Thinkers</strong> - Recognize opportunities and understand how and when to capitalize on those ideas<br></li>
           <li *ngIf="ttalent == 'Entrepreneur (I/P)'" >Keywords: Promotor, Business Person, Optimistic, Self-Reliant<br></li>
           <li *ngIf="ttalent == 'Entrepreneur (I/P)'" >Uses past experiences and imaginative ideas to make decisions<br></li>
-      
+
           <li *ngIf="ttalent == 'Limbic (R/P) / Right-Brained'" >Combines organization cues with emotional and creative modes<br></li>
           <li *ngIf="ttalent == 'Limbic (R/P) / Right-Brained'" >Builds on ideas of others and implements. Intuition and brainstorming are important<br></li>
           <li *ngIf="ttalent == 'Limbic (R/P) / Right-Brained'" >May overlook gathering facts, details, or crunching the numbers<br></li>
@@ -655,14 +655,14 @@
           <li *ngIf="ttalent == 'Cerebral (A/I) / Right-Brained'" >Combines analytical processing with intuitive thinking and creative ability<br></li>
           <li *ngIf="ttalent == 'Cerebral (A/I) / Right-Brained'" >Utilizes visualization, free-flow brainstorming, intuition, and strategy to solve problems<br></li>
           <li *ngIf="ttalent == 'Cerebral (A/I) / Right-Brained'" >May overlook details and the “proper” sequence<br></li>
-  
+
           <li *ngIf="ttalent == 'Cerebral (A/I) / Left-Brained'" >Combines organized facts with organization, while using creativity and taking risks<br></li>
           <li *ngIf="ttalent == 'Cerebral (A/I) / Left-Brained'" >Uses factual analysis, step-by-step processes, and modeling to make decisions<br></li>
           <li *ngIf="ttalent == 'Cerebral (A/I) / Left-Brained'" >May overlook asking for opinions and thinking about impact to others<br></li>
 
-          <li *ngIf="ttalent == 'Limbic (R/P) / Left-Brained'" >Balance between logical, sequential, and emotional thinking<br></li> 
-          <li *ngIf="ttalent == 'Limbic (R/P) / Left-Brained'" >Solves problems by gathering facts, creating time lines, and asking others for input<br></li> 
-          <li *ngIf="ttalent == 'Limbic (R/P) / Left-Brained'" >May overlook “big picture” or unusual possibilities<br></li> 
+          <li *ngIf="ttalent == 'Limbic (R/P) / Left-Brained'" >Balance between logical, sequential, and emotional thinking<br></li>
+          <li *ngIf="ttalent == 'Limbic (R/P) / Left-Brained'" >Solves problems by gathering facts, creating time lines, and asking others for input<br></li>
+          <li *ngIf="ttalent == 'Limbic (R/P) / Left-Brained'" >May overlook “big picture” or unusual possibilities<br></li>
 
         </ul>
 
@@ -672,12 +672,12 @@
 </div>
 
   <br><br><br>
-      
+
   <!--BLIND SPOTS REPORT-->
   <div id="bsrpt-wrapper">
-    
+
     <div class="teamReport"  [ngClass]="{'downsize-rpt': team.teamblindspots.length > 10 }">
-  
+
       <div>
           <h2 class="rpt-title">Blind Spots Report</h2>
       </div>
@@ -689,8 +689,8 @@
             </label>
         </div>
       </div>
-    
-      
+
+
       <div class="row leftPosition" *ngFor="let tbspot of team.teamblindspots; let i = index;">
         <div class="large-12 columns" class="report">
           <img src="../../assets/img/blindicon.png">
@@ -714,22 +714,22 @@
             <li *ngIf="tbspot == 'Analytical'" >Words With Friends, Jigsaw Puzzles<br></li>
             <li *ngIf="tbspot == 'Analytical'" >Watch TV Court Shows And Predict The Verdict<br></li>
             <li *ngIf="tbspot == 'Analytical'" >Pick A Side On Controversal Conversations<br></li>
-            
+
             <li *ngIf="tbspot == 'Procedural'" >Master A New Skill<br></li>
             <li *ngIf="tbspot == 'Procedural'" >Assemble Furniture By The Instructions<br></li>
             <li *ngIf="tbspot == 'Procedural'" >Prepare A Family Tree<br></li>
             <li *ngIf="tbspot == 'Procedural'" >Learn A Line Dance (Cha Cha Slide)<br></li>
-            
+
             <li *ngIf="tbspot == 'Relational'" >Karaoke<br></li>
             <li *ngIf="tbspot == 'Relational'" >People Watching, Join Snapchat<br></li>
             <li *ngIf="tbspot == 'Relational'" >Take 10 Minute "Deep Breathing Break" Morning/Noon/Night<br></li>
-            <li *ngIf="tbspot == 'Relational'" >Play With Children The Way They Want To Play<br></li>          
+            <li *ngIf="tbspot == 'Relational'" >Play With Children The Way They Want To Play<br></li>
 
             <li *ngIf="tbspot == 'Innovative'" >Nature Watching, Photograpy<br></li>
             <li *ngIf="tbspot == 'Innovative'" >Attend And Eventually Participate In An Open Mic Night<br></li>
-            <li *ngIf="tbspot == 'Innovative'" >Design A T-Shirt, Personal Brand or Cartoon<br></li>    
+            <li *ngIf="tbspot == 'Innovative'" >Design A T-Shirt, Personal Brand or Cartoon<br></li>
             <li *ngIf="tbspot == 'Innovative'" >Repurpose Old Junk In Cool Ways<br></li>
-          
+
             <li *ngIf="tbspot == 'Cerebral (A/I)'" >Learn To Play An Instrument<br></li>
             <li *ngIf="tbspot == 'Cerebral (A/I)'" >Wine Tasting<br></li>
             <li *ngIf="tbspot == 'Cerebral (A/I)'" >Allow Yourself to Daydream For 15 Minutes Before Getting Out Of Bed<br></li>
@@ -744,25 +744,25 @@
             <li *ngIf="tbspot == 'Left-Brained'" >Crosswords, Sudoku, Brainteasers<br></li>
             <li *ngIf="tbspot == 'Left-Brained'" >DIY Projects<br></li>
             <li *ngIf="tbspot == 'Left-Brained'" >Write A Critical Review<br></li>
-            <li *ngIf="tbspot == 'Left-Brained'" >Record A Podcast<br></li>              
+            <li *ngIf="tbspot == 'Left-Brained'" >Record A Podcast<br></li>
 
             <li *ngIf="tbspot == 'Right-Brained'" >Yoga, Crossfit, Or A New Sport<br></li>
             <li *ngIf="tbspot == 'Right-Brained'" >Cook For Others<br></li>
             <li *ngIf="tbspot == 'Right-Brained'" >Salsa Dance Classes<br></li>
-            <li *ngIf="tbspot == 'Right-Brained'" >Wear Something Silly Once A Week<br></li>      
-            <li *ngIf="tbspot == 'Right-Brained'" >Attend A Paint And Sip Or Model Painting Class<br></li>  
-            
+            <li *ngIf="tbspot == 'Right-Brained'" >Wear Something Silly Once A Week<br></li>
+            <li *ngIf="tbspot == 'Right-Brained'" >Attend A Paint And Sip Or Model Painting Class<br></li>
+
             <li *ngIf="tbspot == 'Facts vs. Feelings (A/R)'" >Golf<br></li>
             <li *ngIf="tbspot == 'Facts vs. Feelings (A/R)'" >Billiards or Darts<br></li>
             <li *ngIf="tbspot == 'Facts vs. Feelings (A/R)'" >Strategy Games and Puzzles<br></li>
-            <li *ngIf="tbspot == 'Facts vs. Feelings (A/R)'" >Playing Dominos<br></li> 
+            <li *ngIf="tbspot == 'Facts vs. Feelings (A/R)'" >Playing Dominos<br></li>
 
             <li *ngIf="tbspot == 'Entrepreneur (I/P)'" >Fly A Drone<br></li>
             <li *ngIf="tbspot == 'Entrepreneur (I/P)'" >Invent A "Gourmet" Dish And Prepare It<br></li>
             <li *ngIf="tbspot == 'Entrepreneur (I/P)'" >Develop A Personal Budget<br></li>
             <li *ngIf="tbspot == 'Entrepreneur (I/P)'" >Organize Your Pictures and Music Files<br></li>
             <li *ngIf="tbspot == 'Entrepreneur (I/P)'" >Be Exactly On Time All Day<br></li>
-        
+
             <li *ngIf="tbspot == 'Limbic (R/P) / Right-Brained'" >Listen To The Instrumental Version of Your Favorite Album<br></li>
             <li *ngIf="tbspot == 'Limbic (R/P) / Right-Brained'" >Meet A New Person Everyday For A Week<br></li>
             <li *ngIf="tbspot == 'Limbic (R/P) / Right-Brained'" >Thoroughly Clean Your Living Space<br></li>
@@ -784,12 +784,12 @@
             <li *ngIf="tbspot == 'Cerebral (A/I) / Left-Brained'" >Write A Critical Review<br></li>
             <li *ngIf="tbspot == 'Cerebral (A/I) / Left-Brained'" >Record A Podcast<br></li>
 
-            <li *ngIf="tbspot == 'Limbic (R/P) / Left-Brained'" >Listen To The Instrumental Version of Your Favorite Album<br></li> 
-            <li *ngIf="tbspot == 'Limbic (R/P) / Left-Brained'" >Meet A New Person Everyday For A Week<br></li> 
-            <li *ngIf="tbspot == 'Limbic (R/P) / Left-Brained'" >Thoroughly Clean Your Living Space<br></li> 
-            <li *ngIf="tbspot == 'Limbic (R/P) / Left-Brained'" >DIY Projects<br></li> 
-            <li *ngIf="tbspot == 'Limbic (R/P) / Left-Brained'" >Write A Critical Review<br></li> 
-            <li *ngIf="tbspot == 'Limbic (R/P) / Left-Brained'" >Record A Podcast<br></li> 
+            <li *ngIf="tbspot == 'Limbic (R/P) / Left-Brained'" >Listen To The Instrumental Version of Your Favorite Album<br></li>
+            <li *ngIf="tbspot == 'Limbic (R/P) / Left-Brained'" >Meet A New Person Everyday For A Week<br></li>
+            <li *ngIf="tbspot == 'Limbic (R/P) / Left-Brained'" >Thoroughly Clean Your Living Space<br></li>
+            <li *ngIf="tbspot == 'Limbic (R/P) / Left-Brained'" >DIY Projects<br></li>
+            <li *ngIf="tbspot == 'Limbic (R/P) / Left-Brained'" >Write A Critical Review<br></li>
+            <li *ngIf="tbspot == 'Limbic (R/P) / Left-Brained'" >Record A Podcast<br></li>
           </ul>
 
         </div>

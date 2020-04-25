@@ -233,22 +233,6 @@ export class TeamMapComponent implements OnInit {
 
   }
 
-  styleNames() {
-
-    var names = jquery(".name");
-
-    if (names && names.length > 0)
-
-      names.forEach((div) => {
-
-        if (div.height > 175) {
-          alert("damn!");
-        }
-
-      });
-
-  }
-
   isChecked(skillName: string) {
 
     var index = this.mapSkills.map(function (e) {
